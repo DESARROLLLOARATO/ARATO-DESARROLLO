@@ -183,80 +183,68 @@ h6 {
                           <div class="section_wrapper mcb-section-inner">
                             <div class="wpcf7-captchar">
                               <div class="column_attr">
-                                 <form action="" method="get">
-                                    <table width="100%" border="0" align="center"  background="">
-                                          <tbody>
+                                <form action="" method="get">
+                                <table width="100%" border="0" align="center"  background="">
+                                      <tbody>
                                             <tr>
-                                              <td align="left"><h4 class="wpcf7-mail-sent-ok">Empresa:</h4>
-                                                <p>&nbsp;</p>
-                                                <p>&nbsp;</p>
-                                                <h4>
-                                                    <select onchange="location.href='the-company.php?empresa='+this.value" name="empresa" id="select_empresa" >
+                                              <td  width="10" align="center"><h4 class="wpcf7-mail-sent-ok">Empresa:</h4>
+                                                <p>
+                                                  <select onchange="location.href='the-company.php?empresa='+this.value" name="empresa" id="select_empresa" >
                                                     <option value="0">Seleccione la empresa</option>
                                                     <option <?php if(isset($_GET["empresa"]) and $_GET["empresa"] == 1){ echo "selected"; } ?> value="1">BEGGIE PERÚ</option>
                                                     <option <?php if(isset($_GET["empresa"]) and $_GET["empresa"] == 2){ echo "selected"; } ?> value="2">ARATO PERÚ</option>
                                                     <option <?php if(isset($_GET["empresa"]) and $_GET["empresa"] == 3){ echo "selected"; } ?> value="3">INAGRO</option>
                                                   </select>
-                                                </h4>
-                                                <h4 class="wpcf7-mail-sent-ok">Patron: </h4>
-                                                <p>&nbsp;</p>
-                                                <p>&nbsp;</p>
-                                               
-                                                 <p>
+                                                </p>
+                                                <h4 class="wpcf7-mail-sent-ok">Patrón: </h4>
+                                                <p>
                                                   <select name="select2" id="select2">
-                                                    <option value="0">Seleccione portainjerto</option>
+                                                    <option value="0">Seleccione un patrón</option>
                                                     <?php while($datos2 = mysqli_fetch_row($res2)) { ?>
                                                     <option value="<?php echo $datos2[0] ?>"><?php echo $datos2[0] ?></option>
                                                     <?php } ?>
                                                   </select>
                                                 </p>
                                                 <h4 class="wpcf7-mail-sent-ok">Cultivar:</h4>
-                                                <p>&nbsp;</p>
-                                                <p>&nbsp;</p>
                                                 <p>
                                                   <select name="select8" id="select8">
-                                                    <option value="0" selected>Seleccione Cultivar</option>
+                                                    <option value="0" selected>Seleccione un cultivar</option>
                                                     <?php while($datos5 = mysqli_fetch_row($res5)) { ?>
                                                     <option value="<?php echo $datos5[0] ?>"><?php echo $datos5[0] ?></option>
                                                     <?php } ?>
                                                   </select>
                                                 </p></td>
-                                              <td align="left"><h4 class="wpcf7-mail-sent-ok">Módulo:</h4>
-                                                <h4>&nbsp;</h4>
-                                                <h4>&nbsp;</h4>
-                                                <h4>
+                                              <td width="100" align="left"><h4 class="wpcf7-mail-sent-ok">Módulo:</h4>
+                                                <p>
                                                   <select name="select3" id="select3">
-                                                  <option value="0">Seleccione un Modulo</option>
-                                                  <?php while($datos = mysqli_fetch_row($res)) { ?>
-                                                  <option value="<?php echo $datos[0] ?>"><?php echo $datos[0] ?></option>
-                                                  <?php } ?>
-                                                </select>
-                                                <h4 class="wpcf7-mail-sent-ok">Turno:</h4>
-                                                <p>&nbsp;</p>
-                                                <p>&nbsp;</p>
-                                                
+                                                    <option value="0">Seleccione un módulo</option>
+                                                    <?php while($datos = mysqli_fetch_row($res)) { ?>
+                                                    <option value="<?php echo $datos[0] ?>"><?php echo $datos[0] ?></option>
+                                                    <?php } ?>
+                                                  </select>
+                                                </p>
+                                                <h4>
+                                                  <h4 class="wpcf7-mail-sent-ok">Turno:</h4>
+                                                <p>
                                                   <select name="select4" id="select4">
                                                     <option value="0">Seleccione un turno</option>
                                                     <?php while($datos3 = mysqli_fetch_row($res3)) { ?>
-                                                        <option value="<?php echo $datos3[0] ?>"><?php echo $datos3[0] ?></option>
+                                                    <option value="<?php echo $datos3[0] ?>"><?php echo $datos3[0] ?></option>
                                                     <?php } ?>
                                                   </select>
+                                                </p>
                                                 </h4>
                                                 <h4 class="wpcf7-mail-sent-ok">Lote:</h4>
-                                                <p>&nbsp;</p>
-                                                <p>&nbsp;</p>
-                                                <h4>
+                                                <p>
                                                   <select name="select5" id="select5">
                                                     <option value="0">Seleccione un lote</option>
                                                     <?php while($datos4 = mysqli_fetch_row($res4)) { ?>
-                                                        <option value="<?php echo $datos4[0] ?>"><?php echo $datos4[0] ?></option>
+                                                    <option value="<?php echo $datos4[0] ?>"><?php echo $datos4[0] ?></option>
                                                     <?php } ?>
                                                   </select>
-                                              </h4></td>
-                                              <td align="left"><h4 class="wpcf7-mail-sent-ok">Campaña:</h4>
-                                                <p>&nbsp;</p>
-                                                <p>&nbsp;</p>
-                                                <h4>
+                                              </p></td>
+                                              <td width="100" align="left"><h4 class="wpcf7-mail-sent-ok">Campaña:</h4>
+                                                <p>
                                                   <select name="select6" id="select6">
                                                     <option value="0">Seleccione una campaña</option>
                                                     <option value="1">2016-2017</option>
@@ -269,10 +257,8 @@ h6 {
                                                     <option value="8">2023-2024</option>
                                                     <option value="9">2024-2025</option>
                                                   </select>
-                                                </h4>
+                                                </p>
                                               <h4 class="wpcf7-mail-sent-ok"> Aplicación:</h4>
-                                              <p>&nbsp;</p>
-                                              <p>&nbsp;</p>
                                               <p>
                                                 <select name="select7" id="select7">
                                                   <option value="0" selected>Seleccione la aplicación</option>
@@ -282,16 +268,18 @@ h6 {
                                                 </select>
                                               </p></td>
                                             </tr>
-                                          </tbody>
-                                    </table>
+                                  </tbody>
+                                  </table>
                                     
-                                                </form>
+                                </form>
                                     <p>
                                       <input   align="center" type="button" name="button" id="button" value="Graficar">
                                 </p>
                               </div>
                             </div>
                           </div>
+                          <p>&nbsp;</p>
+                          <p>&nbsp;</p>
                         </div>
                         <div class="section the_content no_content">
                             <div class="section_wrapper">
