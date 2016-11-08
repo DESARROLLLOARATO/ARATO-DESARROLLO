@@ -8,7 +8,7 @@ if($con->connect_errno > 0){
     die('Imposible conectarse con la base de datos: [' . $con->connect_error . ']');
 }else{}
 
-$empresa = uno;
+$empresa = null;
 
 if(isset($_GET["empresa"]) and $_GET["empresa"]==1){
     $empresa = "BEGGIE PER";
