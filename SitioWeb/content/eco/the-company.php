@@ -8,6 +8,7 @@ if($con->connect_errno > 0){
     die('Imposible conectarse con la base de datos: [' . $con->connect_error . ']');
 }else{}
 
+//LLENAR SELECTS
 $empresa = null;
 
 if(isset($_GET["empresa"]) and $_GET["empresa"]==1){
@@ -20,20 +21,120 @@ if(isset($_GET["empresa"]) and $_GET["empresa"]==3){
     $empresa = "INAGRO";
 }
 
-    $consulta = "SELECT DISTINCT MODULO FROM FILTROS WHERE EMPRESA = '$empresa'";
-    $res = mysqli_query($con,$consulta);
+$consulta = "SELECT DISTINCT MODULO FROM FILTROS WHERE EMPRESA = '$empresa'";
+$res = mysqli_query($con,$consulta);
 
-    $consulta2 = "SELECT DISTINCT PATRON FROM FILTROS WHERE EMPRESA = '$empresa'";
-    $res2 = mysqli_query($con,$consulta2);
+$consulta2 = "SELECT DISTINCT PATRON FROM FILTROS WHERE EMPRESA = '$empresa'";
+$res2 = mysqli_query($con,$consulta2);
 
-    $consulta3 = "SELECT DISTINCT TURNO FROM FILTROS WHERE EMPRESA = '$empresa'";
-    $res3 = mysqli_query($con,$consulta3);  
+$consulta3 = "SELECT DISTINCT TURNO FROM FILTROS WHERE EMPRESA = '$empresa'";
+$res3 = mysqli_query($con,$consulta3);  
 
-    $consulta4 = "SELECT DISTINCT LOTE FROM FILTROS WHERE EMPRESA = '$empresa'";
-    $res4 = mysqli_query($con,$consulta4);
+$consulta4 = "SELECT DISTINCT LOTE FROM FILTROS WHERE EMPRESA = '$empresa'";
+$res4 = mysqli_query($con,$consulta4);
 
-    $consulta5 = "SELECT DISTINCT CULTIVAR FROM FILTROS WHERE EMPRESA = '$empresa'";
-    $res5 = mysqli_query($con,$consulta5);
+$consulta5 = "SELECT DISTINCT CULTIVAR FROM FILTROS WHERE EMPRESA = '$empresa'";
+$res5 = mysqli_query($con,$consulta5);
+//FIN LLENAR SELECTS
+
+$und="Toneladas";
+//$und="Kilogramos";
+$OK="Calcular";
+
+//DATOS TABLA   aratoZutanoHass
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) and $_GET["patron"] == "ZUTANO" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "HASS"){
+    $consulta6 = "SELECT * FROM aratoZutanoHass";
+    $res6 = mysqli_query($con,$consulta6);
+    
+    while($tabla = mysqli_fetch_row($res6)) {
+        $n = $tabla[0];
+        $p2o5 = $tabla[1];
+        $k2o = $tabla[2];
+        $ca = $tabla[3];
+        $mg = $tabla[4];
+        $s = $tabla[5];
+        $na = $tabla[6];
+        $cl = $tabla[7];
+        $fe = $tabla[8];
+        $cu = $tabla[9];
+        $mn = $tabla[10];
+        $zn = $tabla[11];
+        $b = $tabla[12];
+        $mo = $tabla[13];
+    }
+}
+
+//DATOS TABLA   aratoLulaHass
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) and $_GET["patron"] == "LULA" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "HASS"){
+    $consulta7 = "SELECT * FROM aratoLulaHass";
+    $res7 = mysqli_query($con,$consulta7);
+    
+    while($tabla2 = mysqli_fetch_row($res7)) {
+        $n = $tabla2[0];
+        $p2o5 = $tabla2[1];
+        $k2o = $tabla2[2];
+        $ca = $tabla2[3];
+        $mg = $tabla2[4];
+        $s = $tabla2[5];
+        $na = $tabla2[6];
+        $cl = $tabla2[7];
+        $fe = $tabla2[8];
+        $cu = $tabla2[9];
+        $mn = $tabla2[10];
+        $zn = $tabla2[11];
+        $b = $tabla2[12];
+        $mo = $tabla2[13];
+    }
+}
+
+//DATOS TABLA   beggieLulaHass
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) and $_GET["patron"] == "LULA" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "HASS"){
+    $consulta8 = "SELECT * FROM beggieLulaHass";
+    $res8 = mysqli_query($con,$consulta8);
+    
+    while($tabla3 = mysqli_fetch_row($res8)) {
+        $n = $tabla3[0];
+        $p2o5 = $tabla3[1];
+        $k2o = $tabla3[2];
+        $ca = $tabla3[3];
+        $mg = $tabla3[4];
+        $s = $tabla3[5];
+        $na = $tabla3[6];
+        $cl = $tabla3[7];
+        $fe = $tabla3[8];
+        $cu = $tabla3[9];
+        $mn = $tabla3[10];
+        $zn = $tabla3[11];
+        $b = $tabla3[12];
+        $mo = $tabla3[13];
+    }
+}
+
+//DATOS TABLA   beggieZutanoHass
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) and $_GET["patron"] == "ZUTANO" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "HASS"){
+    $consulta9 = "SELECT * FROM beggieZutanoHass";
+    $res9 = mysqli_query($con,$consulta9);
+    
+    while($tabla4 = mysqli_fetch_row($res9)) {
+        $n = $tabla4[0];
+        $p2o5 = $tabla4[1];
+        $k2o = $tabla4[2];
+        $ca = $tabla4[3];
+        $mg = $tabla4[4];
+        $s = $tabla4[5];
+        $na = $tabla4[6];
+        $cl = $tabla4[7];
+        $fe = $tabla4[8];
+        $cu = $tabla4[9];
+        $mn = $tabla4[10];
+        $zn = $tabla4[11];
+        $b = $tabla4[12];
+        $mo = $tabla4[13];
+    }
+}
+
+
+$cantre = 10;
 ?>
 
 <!DOCTYPE html>
@@ -75,22 +176,53 @@ if(isset($_GET["empresa"]) and $_GET["empresa"]==3){
 	color: #243228;
 }
     h4 {
-	color: #171D1F;
-	text-align: left;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
-}
+        color: #171D1F;
+        text-align: left;
+        font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+    }
     h1 {
-	color: #171D1F;
-}
-h3 {
-	color: #171D1F;
-}
-h5 {
-	color: #171D1F;
-}
-h6 {
-	color: #171D1F;
-}
+        color: #171D1F;
+    }
+    h3 {
+        color: #171D1F;
+    }
+    h5 {
+        color: #171D1F;
+    }
+    h6 {
+        color: #171D1F;
+    }
+        
+    table.tabla {
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        font-size: 13px;
+        text-align: left;
+        border-collapse: collapse;
+        margin: auto;
+        margin-bottom: 15px;
+        width: 300px;
+    }
+        
+    table.tabla tr:nth-child(even) {
+        background-color: #eee;
+    }
+
+    table.tabla tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    table.tabla th {
+        font-size: 14px;
+        padding: 8px;
+        border-top: 2px solid #7DCC68;
+        border-bottom: 1px solid #fff;
+        color: #249f04;
+    }
+
+    table.tabla td {
+        padding: 8px;
+        color: #000000;
+    }
     </style>
 </head>
 
@@ -166,7 +298,7 @@ h6 {
             <div class="content_wrapper clearfix">
                 <div class="sections_group">
                   <div class="entry-content" itemprop="mainContentOfPage">                       
-                        <div class="section mcb-section" style="padding-top:30px; padding-bottom:0px; background-color:#EFFBF5">
+                        <div id="informe" class="section mcb-section" style="padding-top:30px; padding-bottom:0px; background-color:#EFFBF5">
                             <div class="section_wrapper mcb-section-inner">
                                 <div class="wrap mcb-wrap one  column-margin-30px valign-top clearfix">
                                     <div class="mcb-wrap-inner">
@@ -184,12 +316,12 @@ h6 {
                             <div class="wpcf7-captchar">
                               <div class="column_attr">
                                 <form action="" method="get">
-                                <table width="100%" border="0" align="center"  background="">
+                                    <table width="100%" border="0" align="center"  background="">
                                       <tbody>
                                             <tr>
                                               <td  width="10" align="center"><h4 class="wpcf7-mail-sent-ok">Empresa:</h4>
                                                 <p>
-                                                  <select onchange="location.href='the-company.php?empresa='+this.value" name="empresa" id="select_empresa" >
+                                                  <select onchange="location.href='the-company.php?empresa='+this.value+'#informe'" name="empresa" id="select_empresa" >
                                                     <option value="0">Seleccione la empresa</option>
                                                     <option <?php if(isset($_GET["empresa"]) and $_GET["empresa"] == 1){ echo "selected"; } ?> value="1">BEGGIE PERÚ</option>
                                                     <option <?php if(isset($_GET["empresa"]) and $_GET["empresa"] == 2){ echo "selected"; } ?> value="2">ARATO PERÚ</option>
@@ -198,8 +330,8 @@ h6 {
                                                 </p>
                                                 <h4 class="wpcf7-mail-sent-ok">Patrón: </h4>
                                                 <p>
-                                                  <select name="select2" id="select2">
-                                                    <option value="0">Seleccione un patrón</option>
+                                                  <select name="patron" id="select_patron">
+                                                    <option selected value="0">Seleccione un patrón</option>
                                                     <?php while($datos2 = mysqli_fetch_row($res2)) { ?>
                                                     <option value="<?php echo $datos2[0] ?>"><?php echo $datos2[0] ?></option>
                                                     <?php } ?>
@@ -207,7 +339,7 @@ h6 {
                                                 </p>
                                                 <h4 class="wpcf7-mail-sent-ok">Cultivar:</h4>
                                                 <p>
-                                                  <select name="select8" id="select8">
+                                                  <select name="cultivar" id="select_cultivar">
                                                     <option value="0" selected>Seleccione un cultivar</option>
                                                     <?php while($datos5 = mysqli_fetch_row($res5)) { ?>
                                                     <option value="<?php echo $datos5[0] ?>"><?php echo $datos5[0] ?></option>
@@ -216,7 +348,7 @@ h6 {
                                                 </p></td>
                                               <td width="100" align="left"><h4 class="wpcf7-mail-sent-ok">Módulo:</h4>
                                                 <p>
-                                                  <select name="select3" id="select3">
+                                                  <select name="modulo" id="select_modulo">
                                                     <option value="0">Seleccione un módulo</option>
                                                     <?php while($datos = mysqli_fetch_row($res)) { ?>
                                                     <option value="<?php echo $datos[0] ?>"><?php echo $datos[0] ?></option>
@@ -226,7 +358,7 @@ h6 {
                                                 <h4>
                                                   <h4 class="wpcf7-mail-sent-ok">Turno:</h4>
                                                 <p>
-                                                  <select name="select4" id="select4">
+                                                  <select name="turno" id="select_turno">
                                                     <option value="0">Seleccione un turno</option>
                                                     <?php while($datos3 = mysqli_fetch_row($res3)) { ?>
                                                     <option value="<?php echo $datos3[0] ?>"><?php echo $datos3[0] ?></option>
@@ -236,7 +368,7 @@ h6 {
                                                 </h4>
                                                 <h4 class="wpcf7-mail-sent-ok">Lote:</h4>
                                                 <p>
-                                                  <select name="select5" id="select5">
+                                                  <select name="lote" id="select_lote">
                                                     <option value="0">Seleccione un lote</option>
                                                     <?php while($datos4 = mysqli_fetch_row($res4)) { ?>
                                                     <option value="<?php echo $datos4[0] ?>"><?php echo $datos4[0] ?></option>
@@ -245,7 +377,7 @@ h6 {
                                               </p></td>
                                               <td width="100" align="left"><h4 class="wpcf7-mail-sent-ok">Campaña:</h4>
                                                 <p>
-                                                  <select name="select6" id="select6">
+                                                  <select name="campana" id="select_campana">
                                                     <option value="0">Seleccione una campaña</option>
                                                     <option value="1">2016-2017</option>
                                                     <option value="2">2017-2018</option>
@@ -260,7 +392,7 @@ h6 {
                                                 </p>
                                               <h4 class="wpcf7-mail-sent-ok"> Aplicación:</h4>
                                               <p>
-                                                <select name="select7" id="select7">
+                                                <select name="aplicacion" id="aplication">
                                                   <option value="0" selected>Seleccione la aplicación</option>
                                                   <option value="1">Remoción Nutrimental</option>
                                                   <option value="2">Diagnóstico Nutrimental Foliar</option>
@@ -268,15 +400,298 @@ h6 {
                                                 </select>
                                               </p></td>
                                             </tr>
-                                  </tbody>
+                                        </tbody>
                                   </table>
-                                    
-                                </form>
                                     <p>
-                                      <input   align="center" type="button" name="button" id="button" value="Graficar">
-                                </p>
+                                      <input   align="center" type="submit" value="Graficar">
+                                    </p>
+                                </form>
+                                    
                               </div>
-                            </div>
+                                
+                                <!--     CONTENIDO DE GRAFICAS    -->
+                                
+                                <div id="graficas" style="border-top: 2px solid #7DCC68; padding-top: 30px;">
+                                    
+                                    <?php if (isset($_GET["aplicacion"]) and $_GET["aplicacion"] ==1 ){  ?>
+                                      <table class="tabla">
+                                        <tr>
+                                            <th colspan="2" style="text-align: center; font-weight: bold;">Nutrimentos removidos (kg):</th>
+                                          </tr>
+                                          <tr>
+                                            <td>Nitrógeno (N):</td>
+                                            <td>
+                                              <?PHP
+                                                if ($OK == "Calcular"){
+                                                    //NITROGENO
+                                                    if ($und=="Toneladas"){
+                                                        $nit=($n*$cantre);
+                                                        $nitf=number_format($nit, 2, '.',',');
+                                                        echo $nitf;
+                                                    }
+                                                    if ($und=="Kilogramos"){
+                                                        $nit=(($n*$cantre)/1000);
+                                                        $nitf=number_format($nit, 2, '.',',');
+                                                        echo $nitf;
+                                                    }
+                                                }		
+                                                ?>                          
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Fósforo (P<sub>2</sub>O<sub>5</sub>):</td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //Fosforo
+                                                        if ($und=="Toneladas"){
+                                                            $fos=($p2o5*$cantre);
+                                                            $fosf=number_format($fos, 2, '.',',');
+                                                            echo $fosf;
+                                                        }
+                                                        if ($und=="Kilogramos"){
+                                                            $fos=(($p2o5*$cantre)/1000);
+                                                            $fosf=number_format($fos, 2, '.',',');
+                                                            echo $fosf;
+                                                        }
+                                                    }		
+                                                ?>                        
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Potasio (K<sub>2</sub>O)</td>
+                                            <td>
+                                              <?PHP
+                                                if ($OK == "Calcular"){
+                                                    //Potasio
+                                                    if ($und=="Toneladas"){
+                                                        $pot=($k2o*$cantre);
+                                                        $potf=number_format($pot, 2, '.',',');
+                                                        echo $potf;
+                                                    }
+                                                    if ($und=="Kilogramos"){
+                                                        $pot=(($k2o*$cantre)/1000);
+                                                        $potf=number_format($pot, 2, '.',',');
+                                                        echo $potf;
+                                                    }
+                                                }		
+                                                ?>                        
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Calcio (Ca):</td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //Calcio
+                                                        if ($und=="Toneladas"){
+                                                            $cal=($ca*$cantre);
+                                                            $calf=number_format($cal, 2, '.',',');
+                                                            echo $calf;
+                                                        }
+                                                        if ($und=="Kilogramos"){
+                                                            $cal=(($ca*$cantre)/1000);
+                                                            $calf=number_format($cal, 2, '.',',');
+                                                            echo $calf;
+                                                        }
+                                                    }		
+                                                ?>                        
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Magnesio (Mg):</td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //Magnesio
+                                                        if ($und=="Toneladas"){
+                                                            $mag=($mg*$cantre);
+                                                            $magf=number_format($mag, 2, '.',',');
+                                                            echo $magf;
+                                                        }
+                                                        if ($und=="Kilogramos"){
+                                                            $mag=(($mg*$cantre)/1000);
+                                                            $magf=number_format($mag, 2, '.',',');
+                                                            echo $magf;
+                                                        }
+                                                    }		
+                                                ?>                        
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Azufre (S):></td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //azufre
+                                                        if ($und=="Toneladas"){
+                                                            $azu=($s*$cantre);
+                                                            $azuf=number_format($azu, 2, '.',',');
+                                                            echo $azuf;
+                                                        }
+                                                        if ($und=="Kilogramos"){
+                                                            $azu=(($s*$cantre)/1000);
+                                                            $azuf=number_format($azu, 2, '.',',');
+                                                            echo $azuf;
+                                                        }
+                                                    }		
+                                                ?>                        
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Sodio (Na):</td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //sodio
+                                                        if ($und=="Toneladas"){
+                                                            $sod=($na*$cantre);
+                                                            $sodf=number_format($sod, 2, '.',',');
+                                                            echo $sodf;
+                                                        }
+                                                        if ($und=="Kilogramos"){
+                                                            $sod=(($na*$cantre)/1000);
+                                                            $sodf=number_format($sod, 2, '.',',');
+                                                            echo $sodf;
+                                                        }
+                                                    }		
+                                                ?>                        
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Cloruros (Cl):</td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //Cloruros
+                                                        if ($und=="Toneladas"){
+                                                            $clo=($cl*$cantre);
+                                                            $clof=number_format($clo, 2, '.',',');
+                                                            echo $clof;
+                                                        }
+                                                        if ($und=="Kilogramos"){
+                                                            $clo=(($cl*$cantre)/1000);
+                                                            $clof=number_format($clo, 2, '.',',');
+                                                            echo $clof;
+                                                        }
+                                                    }		
+                                                ?>                        
+                                            </td>
+                                          </tr>
+                                    </table>
+                                    <table class="tabla">
+                                          <tr>
+                                            <th colspan="2" style="text-align: center; font-weight: bold;">Nutrimentos removidos (g):</th>
+                                          </tr>
+                                          <tr>
+                                            <td>Hierro (Fe):</td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //hierro
+                                                        if ($und=="Toneladas"){
+                                                            $hie=($fe*$cantre);
+                                                            $hief=number_format($hie, 2, '.',',');
+                                                            echo $hief;
+                                                        }
+                                                        if ($und=="Kilogramos"){
+                                                            $hie=(($fe*$cantre)/1000);
+                                                            $hief=number_format($hie, 2, '.',',');
+                                                            echo $hief;
+                                                        }
+                                                    }		
+                                                ?>                        
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Cobre (Cu):</td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //Cobre
+                                                            if ($und=="Toneladas"){
+                                                                $cob=($cu*$cantre);
+                                                                $cobf=number_format($cob, 2, '.',',');
+                                                                echo $cobf;
+                                                            }
+                                                            if ($und=="Kilogramos"){
+                                                                $cob=(($cu*$cantre)/1000);
+                                                                $cobf=number_format($cob, 2, '.',',');
+                                                                echo $cobf;
+                                                            }
+                                                    }		
+                                                ?>                        
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Manganeso (Mn):</td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //Manganeso
+                                                        if ($und=="Toneladas"){
+                                                            $man=($mn*$cantre);
+                                                            $manf=number_format($man, 2, '.',',');
+                                                            echo $manf;
+                                                        }
+                                                        if ($und=="Kilogramos"){
+                                                            $man=(($mn*$cantre)/1000);
+                                                            $manf=number_format($man, 2, '.',',');
+                                                            echo $manf;
+                                                        }
+                                                    }		
+                                                ?>                        
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Zinc (Zn):</td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //Zinc
+                                                        if ($und=="Toneladas"){
+                                                            $zin=($zn*$cantre);
+                                                            $zinf=number_format($zin, 2, '.',',');
+                                                            echo $zinf;
+                                                        }
+                                                        if ($und=="Kilogramos"){
+                                                            $zin=(($zn*$cantre)/1000);
+                                                            $zinf=number_format($zin, 2, '.',',');
+                                                            echo $zinf;
+                                                        }
+                                                    }		
+                                                ?>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Boro (B):</td>
+                                            <td>
+                                              <?PHP
+                                                    if ($OK == "Calcular"){
+                                                        //Boro
+                                                        if ($und=="Toneladas"){
+                                                            $bor=($b*$cantre);
+                                                            $borf=number_format($bor, 2, '.',',');
+                                                            echo $borf;
+                                                        }
+                                                        if ($und=="Kilogramos"){
+                                                            $bor=(($b*$cantre)/1000);
+                                                            $borf=number_format($bor, 2, '.',',');
+                                                            echo $borf;
+                                                        }
+                                                    }		
+                                                ?>
+                                            </td>
+                                          </tr>
+                                    </table>
+                                    <?php }  ?>
+                                </div>
+                            
+                                <!--  FINAL CONTENIDO GRAFICAS    -->
+                              
+                              
+                              
+                              </div>
                           </div>
                           <p>&nbsp;</p>
                           <p>&nbsp;</p>
