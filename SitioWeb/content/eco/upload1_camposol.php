@@ -1,127 +1,120 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 "> <![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9"> <![endif]-->
-<!--[if IE 9]><html class="no-js lt-ie10"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
-
-<head>
-
-    <!-- Basic Page Needs -->
+    <html lang="en">
+    <head>
+    <title>Camposol</title>
     <meta charset="utf-8">
-    <title>Be</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-
-    <!-- FONTS -->
-    <link rel='stylesheet' id='Roboto-css' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
-    <link rel='stylesheet' id='Patua+One-css' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
-    <link rel='stylesheet' id='Lato-css' href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic'>
-    <link rel='stylesheet' id='Merriweather-css' href='http://fonts.googleapis.com/css?family=Merriweather:300,400,400italic,700,700italic'>
-
-    <!-- CSS -->
-    <link rel='stylesheet' id='global-css' href='../../css/global.css'>
-    <link rel='stylesheet' id='structure-css' href='css/structure.css'>
-    <link rel='stylesheet' id='local-css' href='css/eco.css'>
-    <link rel='stylesheet' id='custom-css' href='css/custom.css'>
-
-
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/slider.css">
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript">
+    function cerrar_ventana(){ 
+        window.close();
+	 }
+</script>
+     
+  </script> 	
+<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+<!--[if lt IE 9]>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+   		<script type="text/javascript" src="js/html5.js"></script>
+    	<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+	<![endif]-->
+<style type="text/css">
+<!--
+.white-shape .head-content div .Estilo71 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.Estilo70{font-family:  Arial, Helvetica, sans-serif; font-size: 16px; font-weight:bold; color:#FC0;}
+.Estilo71{ font-family::Arial, Helvetica, sans-serif; font-size:12px; color:#000;}
+.Estilo72{ font-family::Arial, Helvetica, sans-serif; font-size:14px; color:#000; font-weight:bold;}
+.Estilo711 {font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#000;}
+.Formulario{background-color:#FFF; font-family:Arial, Helvetica, sans-serif;}
+.box_form{border:solid #999 1px; background-color:#FFF;}
+.blaco{ width:10px;}
+.Espacio{height:5px;}
+.BTN{ border:solid #999 1px; border-radius: 5px; background-color:#F4F4F4; width:70px;}
+.box_form_n{border:solid #999 1px; background-color:#FFF; width:80px;}
+-->
+</style>
 </head>
-
-<body class="color-custom style-simple layout-full-width nice-scroll-on mobile-tb-hide button-flat no-content-padding header-fixed minimalist-header-no sticky-header sticky-white ab-hide subheader-both-center menu-line-below-80 menuo-right menuo-no-borders tr-menu">
-    <div id="Wrapper">
-        <div id="Header_wrapper" class="bg-parallax" data-enllax-ratio="0.3">
-            <header id="Header">
-                <div class="header_placeholder"></div>
-                <div id="Top_bar">
-                    <div class="container">
-                        <div class="column one">
-                            <div class="top_bar_left clearfix">
-                                <div class="logo">
-                                    <a id="logo" href="#" title="BeEco - BeTheme"><img class="logo-main scale-with-grid" src="images/imagen.png" alt="ara" /><img class="logo-sticky scale-with-grid" src="images/imagen.png" alt="ara" /><img class="logo-mobile scale-with-grid" src="images/imagen.png" alt="ara" />
-                                    </a>
-                                </div>
-                                <div class="menu_wrapper">
-                                    <nav id="menu" class="menu-main-menu-container">
-                                        <ul id="menu-main-menu" class="menu">
-                                            <li id="menu-item-6" class="menu-item menu-item-type-post_type menu-item-object-page">
-                                                <a href="../../index.html"><span>Inicio</span></a>
-                                            </li>
-                                            <li id="menu-item-2302" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-2291 current_page_item">
-                                                <a href="upload.php"><span>Bases de datos</span></a>
-                                            </li>
-                                            <li id="menu-item-2301" class="menu-item menu-item-type-post_type menu-item-object-page">
-                                                <a href="infomes.php"><span>Informes</span></a>
-                                            </li>
-                                            <li id="menu-item-2300" class="menu-item menu-item-type-post_type menu-item-object-page">
-                                                <a href="analisis.html"><span>Análisis</span></a>
-                                            </li>
-                                            <li id="menu-item-2299" class="menu-item menu-item-type-post_type menu-item-object-page">
-                                                <a href="contactanos.html"><span>Contactanos</span></a>
-                                            </li>
-                                        </ul>
-                                    </nav><a class="responsive-menu-toggle " href="#"><i class="icon-menu"></i></a>
-                                </div>
-                                <div class="secondary_menu_wrapper"></div>
-                                <div class="banner_wrapper"></div>
-                                <div class="search_wrapper">
-                                    <form method="get" id="searchform">
-                                        <i class="icon_search icon-search"></i><a href="#" class="icon_close"><i class="icon-cancel"></i></a>
-                                        <input type="text" class="field" name="s" id="s" placeholder="Que deseas buscar" />
-                                        <input type="submit" class="submit" value="" style="display:none;" />
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="top_bar_right">
-                                <div class="top_bar_right_wrapper">
-                                    <a href="http://themeforest.net/item/betheme-html-responsive-multipurpose-template/13925633?ref=beantownthemes" class="button button_theme button_js action_button " target="_blank"><span class="button_label">Terminar sesión</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <div id="Subheader" style="padding:210px 0 120px;">
-                <div class="container">
-                    <div class="column one">
-                        <h1 class="title">Programs</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="Content">
-            <div class="content_wrapper clearfix">
-                <div class="sections_group">
-                    <div class="entry-content" itemprop="mainContentOfPage">
-                        <div class="section mcb-section" style="padding-top:30px; padding-bottom:0px; background-color:#f0eee4">
-                            <div class="section_wrapper mcb-section-inner">
-                                <div class="wrap mcb-wrap one  column-margin-30px valign-top clearfix">
-                                    <div class="mcb-wrap-inner">
-                                        <div class="column mcb-column one column_column  ">
-                                            <div class="column_attr align_center">
-                                                <h4 style="margin: 0;">Opción para importar datos al sistema</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="section mcb-section" style="padding-top:80px; padding-bottom:40px; ">
-                            <div class="section_wrapper mcb-section-inner">
-                             
-                             
-                             <?php
-				/*SCRIPT CALCULO NUTRIENTES*/
+<body>
+<div class="white-shape">
+<!--==============================header=================================-->
+<header>
+  <div class="head-content">
+     <div class="menu">
+             <nav>
+              <ul class="sf-menu">
+                <li><a href="index.html">Inicio<span></span></a></li>
+              <li class="current">
+              <a>Datos</a>
+                	<ul>
+                      <li>
+                      <a href="">Estaciones</a>
+                      <ul>
+                      <li><a href="nueva_estacion.php">Agregar</a></li>
+                      <li><a href="modifica_estacion.php">Modificar</a></li>
+                      </ul>
+                      <li><a href="">Diagnóstico nutrimental por etapa</a>
+                      <ul>
+                      <li><a href="insertar_datos_peru_etapas.php">Agregar</a></li>
+                      <li><a href="upload.php">Subir conjunto de datos</a></li>
+                      <li><a href="insertar_datos_peru_modifica1.php">Modificar</a></li>
+                      <li><a href="elimina_datos.php">Eliminar</a></li>
+                      </ul>
+                      </li>
+                      </li>
+                   </ul>
+                </li>
+                 <li> <a>Informe</a>
+                	<ul>               
+                      <li><a href="graficar_frut.php">Flor-Fruto</a></li>
+                      <li><a href="graficar_flor.php">Foliar</a></li>                   
+                      <li><a href="por_nutrimentos.php">Comparativo múltiples estaciones por etapa por nutrimento</a></li>
+                      <li><a href="por_nutrimentos1.php">Evolución por nutrimento</a></li>
+                      <li><a href="nutrimento_por_estacion.php">Evolución por nutrimento múltiples estaciones</a></li>
+                   </ul>
+                   </li>
+                    <li>
+                   <a>Estadística</a>
+                    <ul>
+                     <li><a href="historica_cam.php">Histórico de registros</a></li>
+                     <li><a href="estadistica_cam.php">Estadísticas</a></li>
+                     <li><a href="cuantificador.php">Cuantificador de muestreos</a></li>
+                     <li><a href="consulta_estaciones.php">Gestor de estaciones</a></li>
+                   </ul>
+                   </li>
+                   <li><a href="#"onclick="setTimeout(function(){var ww = window.open(window.location, '_self'); ww.close(); }, 1000);">Salir</a></li>
+              </ul>
+            <div class="clear"></div> 
+          </nav>                       
+          <div class="clear"></div>
+   </div>     
+    <div class="logo" class="Formulario">
+<h1><a href="index.html"><img src="images/logo.png" alt="" width="400" height="72"></a></h1>
+      <p class="">Líder en la producción y exportación de paltas de la mejor calidad.</p>
+      <div align="center" class="Formulario">
+        <table width="1228" height="32" border="0" cellspacing="10">
+           <div align="center"></div>
+                    
+             <tr>
+                <td colspan="5" class="Estilo711">&nbsp;</td>
+                <?php
 				
-$ids="";
+				$ids="";
 $ptg="";
 $ptr="";
 $situa="";
@@ -154,7 +147,7 @@ $id="";
 				include "variables.php";
 				$cnx= mysql_connect($hostname,$user,$pass);
               if (!$cnx){die('ERROR DE CONEXION CON MYSQL: ' . mysql_error());}
-              $database = mysql_select_db("pruebaar_arato",$cnx);
+              $database = mysql_select_db("pruebaar_peru_prueba",$cnx);
               if (!$database){die('ERROR CONEXION CON BD: '.mysql_error());} 
 				
 				$status = "";
@@ -6376,7 +6369,6 @@ if ($separador[21] > $mns && $separador[21]>0)
 
 
 
-
 if ($separador[22] < $zns && $separador[22]>0)
 
     {
@@ -11872,7 +11864,6 @@ if ($separador[26]> $cls && $separador[26]>0)
 	}
 	if($separador[19]==0)
 	{
-
 	$fer1=0;
 	}
 	if($separador[20]==0)
@@ -18459,7 +18450,6 @@ if ($separador[13] < $ns && $separador[13]>0 )
 	}	 
 
 	   
-
 
 
 if ($separador[13] > $ns && $separador[13]>0)
@@ -26565,7 +26555,7 @@ if ($separador[26]> $cls && $separador[26]>0)
 	
 }
 }
-$insertar="INSERT INTO datos_arato (ID, ptg, patron, estado, situacion, diametro, longitud, pesof, porcentaje, campania, E1, edad, FM, N, P, K, Ca, Mg, S, Fe, Cu, Mn, Zn, B, Mo, Na, Cl, Nr, Pr, Kr, Car, Mgr, Sr, Fer, Cur, Mnr, Znr, Br, Mor, Nar, Clr)
+$insertar="INSERT INTO data_flor_fruto (ID, ptg, patron, estado, situacion, diametro, longitud, pesof, porcentaje, campania, E1, edad, FM, N, P, K, Ca, Mg, S, Fe, Cu, Mn, Zn, B, Mo, Na, Cl, Nr, Pr, Kr, Car, Mgr, Sr, Fer, Cur, Mnr, Znr, Br, Mor, Nar, Clr)
 VALUES ('".$separador[0]."','".$separador[1]."','".$separador[2]."','".$separador[3]."','".$separador[4]."','".$separador[5]."','".$separador[6]."','".$separador[7]."','".$separador[8]."','".$separador[9]."','".$separador[10]."','".$separador[11]."','".$separador[12]."','".$separador[13]."','".$separador[14]."','".$separador[15]."','".$separador[16]."','".$separador[17]."','".$separador[18]."','".$separador[19]."','".$separador[20]."','".$separador[21]."','".$separador[22]."','".$separador[23]."','".$separador[24]."','".$separador[25]."','".$separador[26]."','".$nr."','".$pr."','".$kr."','".$car."','".$mgr."','".$sr."','".$fer."','".$cur."','".$mnr."','".$znr."','".$br."','".$mor."','".$nar."','".$clr."')";
 
 $result= mysql_query($insertar, $cnx);
@@ -26573,65 +26563,32 @@ if (! $result){
                                echo "La consulta SQL contiene errores.".mysql_error();
                                exit();
                 }
-				else {echo "<center><td align='center' class='Estilo73'>Importación correcta!</td>";
+				else {echo "<center><td align='center' class='Estilo73'>DATOS INSERTADOS CORRECTAMENTE</td>";
 				     }	
 
 }
 
 fclose($fp);	
 ?>
-                              </div>
-                        </div>
-                        <div class="section the_content no_content"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer id="Footer" class="clearfix">
-          <div class="footer_copy">
-              <div class="container">
-                    <div class="column one">
-                        <a id="back_to_top" class="button button_left button_js" href="#"><span class="button_icon"><i class="icon-up-open-big"></i></span></a>
-                        <div class="copyright">
-                            &copy; © 2016 - Derechos reservados para Grupo Agrícola Arato
-                        </div>
-                        <ul class="social"></ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+
+                              </tr>
+              <tr>
+                <td colspan="5" class="Estilo711">&nbsp;</td>
+  </table></div>
+    </header>    
+      <!--==============================content================================--><!--==============================footer=================================-->
+      <footer>
     
-    <!-- JS -->
-    <script type="text/javascript" src="../../js/jquery-2.1.4.min.js"></script>
+    <div class="container_12">
+        <div class="grid_12">
+        		<div class="line-1"></div>
+              <p class="foot-text">Camposol &copy; 2013&nbsp;<img src="images/smalllogo.png" alt="" width="19" height="18" class="">&nbsp;<a href="index-6.html">derechos reservados, perÚ</a>&nbsp;<!-- {%FOOTER_LINK} --></p>
+ 
+      </div>
+        <div class="clear"></div>
+  	</div>
 
-    <script type="text/javascript" src="../../js/mfn.menu.js"></script>
-    <script type="text/javascript" src="../../js/jquery.plugins.js"></script>
-    <script type="text/javascript" src="../../js/jquery.jplayer.min.js"></script>
-    <script type="text/javascript" src="../../js/animations/animations.js"></script>
-    <script type="text/javascript" src="../../js/scripts.js"></script>
-
-
-    <script id="mfn-dnmc-retina-js">
-        jQuery(window).load(function() {
-            var retina = window.devicePixelRatio > 1 ? true : false;
-            if (retina) {
-                var retinaEl = jQuery("#logo img.logo-main");
-                var retinaLogoW = retinaEl.width();
-                var retinaLogoH = retinaEl.height();
-                retinaEl.attr("src", "images/imagen.png").width(retinaLogoW).height(retinaLogoH);
-                var stickyEl = jQuery("#logo img.logo-sticky");
-                var stickyLogoW = stickyEl.width();
-                var stickyLogoH = stickyEl.height();
-                stickyEl.attr("src", "images/imagen.png").width(stickyLogoW).height(stickyLogoH);
-                var mobileEl = jQuery("#logo img.logo-mobile");
-                var mobileLogoW = mobileEl.width();
-                var mobileLogoH = mobileEl.height();
-                mobileEl.attr("src", "images/imagen.png").width(mobileLogoW).height(mobileLogoH);
-            }
-        });
-    </script>
-
+   </footer> 
+ </div>
 </body>
-
 </html>

@@ -1969,7 +1969,8 @@ hr.no_line {
 
 /* Forms */
 form,fieldset {
-    margin-bottom: 0;
+	margin-bottom: 0;
+	text-align: center;
 }
 
 textarea {
@@ -1980,7 +1981,7 @@ label,legend {
 	display: block;
 	margin-bottom: 5px;
 	font-weight: 700;
-	text-align: left;
+	text-align: center;
 }
 
 input[type="checkbox"] {
