@@ -321,7 +321,7 @@ $cantre = 10;
                                             <tr>
                                               <td  width="10" align="center"><h4 class="wpcf7-mail-sent-ok">Empresa:</h4>
                                                 <p>
-                                                  <select onchange="location.href='the-company.php?empresa='+this.value+'#informe'" name="empresa" id="select_empresa" >
+                                                  <select onchange="location.href='informes.php?empresa='+this.value+'#informe'" name="empresa" id="select_empresa" >
                                                     <option value="0">Seleccione la empresa</option>
                                                     <option <?php if(isset($_GET["empresa"]) and $_GET["empresa"] == 1){ echo "selected"; } ?> value="1">BEGGIE PERÚ</option>
                                                     <option <?php if(isset($_GET["empresa"]) and $_GET["empresa"] == 2){ echo "selected"; } ?> value="2">ARATO PERÚ</option>
