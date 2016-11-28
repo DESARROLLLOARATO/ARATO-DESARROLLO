@@ -217,6 +217,47 @@ $mncv=4.95;
 $zncv=27.18;
 $bcv=19.84;
 }
+    
+if ($_POST['fenolo']=="Madurez de cosecha 2 >70 mm Ø (≥ 24% m.s. en pulpa) 324 días (28 Junio)"){
+					  
+//valor estÃƒÂ¡ndar
+
+//%'s
+$ns=0.99;
+$ps=0.23;
+$ks=1.98;
+$cas=0.03;
+$mgs=0.08;
+$ss=0.14;
+$nas=416.22;
+$cls=250.00;
+
+//ppmn's
+$fes=24.98;
+$cus=9.51;
+$mns=15.81;
+$zns=32.56;
+$bs=119.50;
+
+
+//CV
+//%'s
+$ncv=8.20;
+$pcv=20.25;
+$kcv=11.33;
+$cacv=18.04;
+$mgcv=14.56;
+$scv=18.22;
+$nacv=29.39;
+$clcv=0.00;
+
+//ppmn's
+$fecv=45.01;
+$cucv=52.00;
+$mncv=211.63;
+$zncv=32.37;
+$bcv=29.13;
+}
 
 //nitrogeno porcentajes
 if ($_POST['n1'] < $ns && $_POST['n1']>0 )
