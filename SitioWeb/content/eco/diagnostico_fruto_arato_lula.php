@@ -15,84 +15,44 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) &&
    isset($_POST['localidad']) && !empty($_POST['localidad']) &&
    isset($_POST['correo']) && !empty($_POST['correo'])){
    
-if ($_POST['fenolo']=="Antesis (50% de flor abierta) 52 días (29 Septiembre)"){
-//valor estÃƒÂ¡ndar
-
-//%'s
-$ns=2.00;
-$ps=0.19;
-$ks=0.98;
-$cas=1.03;
-$mgs=0.42;
-$ss=0.13;
-$nas=0.57;
-$cls=0.38;
-
-//ppmn's
-$fes=50.38;
-$cus=34.29;
-$mns=38.30;
-$zns=27.32;
-$bs=59.80;
-
-
-//CV
-//%'s
-$ncv=10.55;
-$pcv=22.35;
-$kcv=27.45;
-$cacv=62.30;
-$mgcv=55.74;
-$scv=32.34;
-$nacv=21.02;
-$clcv=21.55;
-
-//ppmn's
-$fecv=41.18;
-$cucv=94.49;
-$mncv=38.58;
-$zncv=10.22;
-$bcv=21.03;
-}              
-
 if ($_POST['fenolo']=="Fruto tamaño aceituna (20-30 mm Ø) 110 días (26 Noviembre)"){
 //valor estÃƒÂ¡ndar
 
 //%'s
-$ns=2.17;
-$ps=0.17;
-$ks=0.95;
-$cas=1.21;
-$mgs=0.57;
-$ss=0.16;
-$nas=0.56;
-$cls=0.57;
+$ns=2.11;
+$ps=0.29;
+$ks=1.60;
+$cas=0.24;
+$mgs=0.19;
+$ss=0.14;
+$nas=274.60;
+$cls=300.00;
 
 //ppmn's
-$fes=68.33;
-$cus=37.28;
-$mns=30.69;
-$zns=23.30;
-$bs=34.03;
+$fes=45.44;
+$cus=12.37;
+$mns=5.00;
+$zns=59.08;
+$bs=156.06;
 
 
 //CV
 //%'s
-$ncv=17.26;
-$pcv=5.72;
-$kcv=17.15;
-$cacv=26.36;
-$mgcv=20.89;
-$scv=30.93;
-$nacv=7.42;
-$clcv=13.80;
+$ncv=6.63;
+$pcv=9.32;
+$kcv=3.51;
+$cacv=16.84;
+$mgcv=14.27;
+$scv=16.81;
+$nacv=6.97;
+$clcv=0.00;
 
 //ppmn's
-$fecv=48.97;
-$cucv=130.12;
-$mncv=55.40;
-$zncv=13.55;
-$bcv=9.64;
+$fecv=34.94;
+$cucv=25.44;
+$mncv=0.00;
+$zncv=20.70;
+$bcv=21.08;
 }
 
 
@@ -100,120 +60,120 @@ if ($_POST['fenolo']=="Fruto Etapa I (35-45 mm Ø) 140 días (24 Diciembre)"){
 //valor estÃƒÂ¡ndar
 
 //%'s
-$ns=2.27;
-$ps=0.18;
-$ks=1.04;
-$cas=1.32;
-$mgs=0.55;
-$ss=0.12;
-$nas=0.51;
-$cls=0.49;
+$ns=1.12;
+$ps=0.19;
+$ks=1.76;
+$cas=0.12;
+$mgs=0.10;
+$ss=0.10;
+$nas=297.50;
+$cls=300.00;
 
 //ppmn's
-$fes=77.69;
-$cus=41.78;
-$mns=17.41;
-$zns=24.01;
-$bs=34.23;
+$fes=97.68;
+$cus=8.33;
+$mns=7.55;
+$zns=35.21;
+$bs=135.75;
 
 
 //CV
 //%'s
-$ncv=9.06;
-$pcv=13.89;
-$kcv=18.20;
-$cacv=11.94;
-$mgcv=8.50;
-$scv=38.60;
-$nacv=11.23;
-$clcv=11.39;
+$ncv=10.17;
+$pcv=8.59;
+$kcv=13.16;
+$cacv=30.54;
+$mgcv=15.26;
+$scv=11.12;
+$nacv=16.31;
+$clcv=0.00;
 
 //ppmn's
-$fecv=18.05;
-$cucv=25.46;
-$mncv=32.37;
-$zncv=25.17;
-$bcv=30.43;
+$fecv=153.36;
+$cucv=18.13;
+$mncv=38.88;
+$zncv=17.97;
+$bcv=27.96;
 }              
 
 if ($_POST['fenolo']=="Fruto Etapa II (50-60 mm Ø) 259 días (25 Abril)"){
 //valor estÃƒÂ¡ndar
 
 //%'s
-$ns=2.03;
-$ps=0.12;
-$ks=1.30;
-$cas=1.90;
-$mgs=0.76;
-$ss=0.17;
-$nas=0.16;
-$cls=0.46;
+$ns=1.22;
+$ps=0.21;
+$ks=1.69;
+$cas=0.10;
+$mgs=0.11;
+$ss=0.12;
+$nas=297.88;
+$cls=300.00;
 
 //ppmn's
-$fes=93.93;
-$cus=91.64;
-$mns=50.75;
-$zns=18.35;
-$bs=28.23;
+$fes=77.58;
+$cus=12.01;
+$mns=5.00;
+$zns=44.98;
+$bs=164.75;
 
 
 //CV
 //%'s
-$ncv=9.84;
-$pcv=19.07;
-$kcv=23.60;
-$cacv=22.01;
-$mgcv=14.48;
-$scv=44.13;
-$nacv=29.46;
-$clcv=24.96;
+$ncv=5.77;
+$pcv=7.44;
+$kcv=13.69;
+$cacv=31.33;
+$mgcv=9.72;
+$scv=8.91;
+$nacv=16.58;
+$clcv=0.00;
 
 //ppmn's
-$fecv=25.08;
-$cucv=21.19;
-$mncv=27.31;
-$zncv=14.98;
-$bcv=22.90;
+$fecv=55.57;
+$cucv=15.99;
+$mncv=0.00;
+$zncv=8.44;
+$bcv=21.72;
 }
 
 if ($_POST['fenolo']=="Fruto Etapa III (60-70 mm Ø) 293 días (28 Mayo)"){
 //valor estÃƒÂ¡ndar
 
 //%'s
-$ns=2.02;
-$ps=0.13;
-$ks=1.26;
-$cas=1.73;
-$mgs=0.66;
-$ss=0.20;
-$nas=0.16;
-$cls=0.45;
+$ns=1.15;
+$ps=0.20;
+$ks=1.87;
+$cas=0.08;
+$mgs=0.10;
+$ss=0.12;
+$nas=364.00;
+$cls=232.13;
 
 //ppmn's
-$fes=104.39;
-$cus=100.42;
-$mns=49.73;
-$zns=18.91;
-$bs=36.99;
+$fes=51.89;
+$cus=10.43;
+$mns=6.71;
+$zns=41.18;
+$bs=160.50;
 
 
 //CV
 //%'s
-$ncv=18.69;
-$pcv=15.81;
-$kcv=27.33;
-$cacv=19.57;
-$mgcv=15.48;
-$scv=21.49;
-$nacv=22.24;
-$clcv=19.42;
+$ncv=8.77;
+$pcv=13.13;
+$kcv=12.99;
+$cacv=32.83;
+$mgcv=12.50;
+$scv=10.91;
+$nacv=27.34;
+$clcv=36.37;
 
 //ppmn's
-$fecv=27.09;
-$cucv=60.10;
-$mncv=15.90;
-$zncv=27.62;
-$bcv=22.41;
+$fecv=70.13;
+$cucv=23.32;
+$mncv=25.69;
+$zncv=18.29;
+$bcv=25.58;
 }
 
 if ($_POST['fenolo']=="Madurez de cosecha >70 mm Ø (≥ 21.5% m.s. en pulpa) 324 días (28 Junio)"){
@@ -221,40 +181,40 @@ if ($_POST['fenolo']=="Madurez de cosecha >70 mm Ø (≥ 21.5% m.s. en pulpa) 32
 //valor estÃƒÂ¡ndar
 
 //%'s
-$ns=1.85;
-$ps=0.11;
-$ks=1.06;
-$cas=1.92;
-$mgs=0.74;
-$ss=0.18;
-$nas=0.15;
-$cls=0.51;
+$ns=1.06;
+$ps=0.17;
+$ks=2.03;
+$cas=0.04;
+$mgs=0.06;
+$ss=0.09;
+$nas=429.50;
+$cls=193.00;
 
 //ppmn's
-$fes=186.20;
-$cus=146.32;
-$mns=50.69;
-$zns=17.17;
-$bs=26.57;
+$fes=29.33;
+$cus=6.42;
+$mns=5.15;
+$zns=23.36;
+$bs=137.10;
 
 
 //CV
 //%'s
-$ncv=19.94;
-$pcv=15.32;
-$kcv=18.75;
-$cacv=18.98;
-$mgcv=14.80;
-$scv=37.62;
-$nacv=22.98;
-$clcv=11.41;
+$ncv=14.23;
+$pcv=13.77;
+$kcv=14.60;
+$cacv=13.36;
+$mgcv=12.60;
+$scv=29.16;
+$nacv=10.06;
+$clcv=46.56;
 
 //ppmn's
-$fecv=62.61;
-$cucv=15.22;
-$mncv=41.53;
-$zncv=23.68;
-$bcv=25.52;
+$fecv=36.17;
+$cucv=19.09;
+$mncv=5.92;
+$zncv=22.28;
+$bcv=31.68;
 }
 
 //nitrogeno porcentajes
