@@ -171,6 +171,20 @@ $cantre = 10;
     <link rel='stylesheet' id='structure-css' href='css/structure.css'>
     <link rel='stylesheet' id='local-css' href='css/eco.css'>
     <link rel='stylesheet' id='custom-css' href='css/custom.css'>
+    
+    <!-- JQUERY -->
+    <script language="javascript" type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+            $(".contenido").fadeOut("normal");
+            $("#aplication").change(function(){
+            $(".contenido").hide();
+                $("#div_" + $(this).val()).fadeIn("normal");
+            });
+        });
+    </script>
+    
+    <!-- CSS -->
     <style type="text/css">
     body,td,th {
 	color: #243228;
@@ -390,15 +404,40 @@ $cantre = 10;
                                                     <option value="9">2024-2025</option>
                                                   </select>
                                                 </p>
-                                              <h4 class="wpcf7-mail-sent-ok"> Aplicación:</h4>
-                                              <p>
-                                                <select name="aplicacion" id="aplication">
-                                                  <option value="0" selected>Seleccione la aplicación</option>
-                                                  <option value="1">Remoción Nutrimental</option>
-                                                  <option value="2">Diagnóstico Nutrimental Foliar</option>
-                                                  <option value="3">Diagnóstico Nutrimental Pulpa</option>
-                                                </select>
-                                              </p></td>
+                                                <h4 class="wpcf7-mail-sent-ok"> Aplicación:</h4>
+                                                <p>
+                                                  <select name="aplicacion" id="aplication">
+                                                      <option value="0" selected>Seleccione la aplicación</option>
+                                                      <option value="1">Remoción Nutrimental</option>
+                                                      <option value="2">Diagnóstico Nutrimental Foliar</option>
+                                                      <option value="3">Diagnóstico Nutrimental Pulpa</option>
+                                                  </select>
+                                                </p>
+                                                <!--  SELECT OPCIONALES   -->
+                                                <div id="div_2" class="contenido">
+                                                    <h4 class="wpcf7-mail-sent-ok"> Elija la etapa:</h4>
+                                                    <p>
+                                                      <select name="aplicacion" id="aplication">
+                                                          <option value="0" selected>Seleccione la etapa2</option>
+                                                          <option value="1">Remoción Nutrimental</option>
+                                                          <option value="2">Diagnóstico Nutrimental Foliar</option>
+                                                          <option value="3">Diagnóstico Nutrimental Pulpa</option>
+                                                      </select>
+                                                    </p>
+                                                </div>
+                                                <div id="div_3" class="contenido">
+                                                    <h4 class="wpcf7-mail-sent-ok"> Elija la etapa:</h4>
+                                                    <p>
+                                                      <select name="aplicacion" id="aplication">
+                                                          <option value="0" selected>Seleccione la etapa3</option>
+                                                          <option value="1">Remoción Nutrimental</option>
+                                                          <option value="2">Diagnóstico Nutrimental Foliar</option>
+                                                          <option value="3">Diagnóstico Nutrimental Pulpa</option>
+                                                      </select>
+                                                    </p>
+                                                </div>
+                                                <!-- FIN SELECT OPCIONALES   -->
+                                              </td>
                                             </tr>
                                         </tbody>
                                   </table>

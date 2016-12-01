@@ -59,7 +59,7 @@
                                                 <a href="upload.php"><span>Bases de datos</span></a>
                                             </li>
                                             <li id="menu-item-2301" class="menu-item menu-item-type-post_type menu-item-object-page">
-                                                <a href="infomes.php"><span>Informes</span></a>
+                                                <a href="informes.php"><span>Informes</span></a>
                                             </li>
                                             <li id="menu-item-2300" class="menu-item menu-item-type-post_type menu-item-object-page">
                                                 <a href="analisis.html"><span>Análisis</span></a>
