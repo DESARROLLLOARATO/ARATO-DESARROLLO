@@ -207,7 +207,7 @@ while ($separador = fgetcsv ($fp, 1000, ",")){
 	         ////////////////// CONDICIONES PARA FOLIAR  /////////////////////////////
 ///// CONDICION ARATO -ZUTANO ETAPA Hojas de 5 cm /////
 if($separador[3]=="Foliar"){
-if($separador[0]=="Arato Perú"){
+if($separador[0]=="ARATO"){
 if($separador[2]=="Zutano"){
 if ($separador[4]=="Hojas de 5 cm"){
 
@@ -10140,7 +10140,7 @@ if ($separador[23]> $cls && $separador[23]>0)
 }
 
 ///// CONDICION Beggie Perú-ZUTANO ETAPA Hojas de 5 cm /////
-if($separador[0]=="Beggie Perú"){
+if($separador[0]=="BEGGIE"){
 if($separador[2]=="Zutano"){
 if($separador[4]=="Hojas de 5 cm"){
 	
@@ -15102,7 +15102,7 @@ if ($separador[23]> $cls && $separador[23]>0)
 }
 
 ///// CONDICION Beggie Perú-Lula ETAPA Hojas de 5 cm /////
-if($separador[0]=="Beggie Perú"){
+if($separador[0]=="BEGGIE"){
 if($separador[2]=="Lula"){
 if($separador[4]=="Hojas de 5 cm"){
 	
@@ -20068,72 +20068,44 @@ if ($separador[23]> $cls && $separador[23]>0)
 	         ////////////////// CONDICIONES PARA PULPA  /////////////////////////////
 ///// CONDICION ARATO -ZUTANO ETAPA Fruto tamaño aceituna /////
 if($separador[3]=="Pulpa"){
-if($separador[0]=="Arato Perú"){
+if($separador[0]=="ARATO"){
 if($separador[2]=="Zutano"){
 if($separador[4]=="Fruto tamaño aceituna"){
 	
 $ns=2.12;
-
 $ps=0.27;
-
 $ks=1.57;
-
 $cas=0.17;
-
 $mgs=0.15;
-
 $ss=0.11;
 
 //ppmn's
-
 $fes=30.78;
-
 $cus=12.99;
-
 $mns=5.00;
-
 $zns=47.64;
-
 $bs=121.46;
-
 $mos=0.21;
-
 $nas=256.60;
-
 $cls=300.00;
-
 
 //CV
 
 //%'s
-
 $ncv=13.36;
-
 $pcv=11.77;
-
 $kcv=4.39;
-
 $cacv=20.43;
-
 $mgcv=20.84;
-
 $scv=21.32;
 //ppmn's
-
 $fecv=43.74;
-
 $cucv=33.23;
-
 $mncv=0.00;
-
 $zncv=22.25;
-
 $bcv=24.16;
-
 $mocv=62.81;
-
 $nacv=5.75;
-
 $clcv=0.00;
 
 if ($separador[10] < $ns && $separador[10]>0 )
@@ -23381,6 +23353,7 @@ if ($separador[23]> $cls && $separador[23]>0)
 }////FIN DEL CICLO ETAPA
 }////FIN DEL CICLO RAZA
 
+///// CONDICION ARATO-LULA ETAPA Fruto tamaño aceituna/////
 if($separador[2]=="Lula"){
 if($separador[4]=="Fruto tamaño aceituna"){
 	
@@ -23931,14 +23904,8735 @@ if ($separador[23]> $cls && $separador[23]>0)
 	$clr=round($clr1,0);
 	
 }
+
+///// CONDICION ARATO-LULA ETAPA Fruto en Crec-1/////
+if($separador[4]=="Fruto en Crec-1"){
+	
+$ns=1.12;
+$ps=0.19;
+$ks=1.76;
+$cas=0.12;
+$mgs=0.10;
+$ss=0.10;
+
+//ppmn's
+
+$fes=97.68;
+$cus=8.33;
+$mns=7.55;
+$zns=35.21;
+$bs=135.75;
+$mos=0.18;
+$nas=297.50;
+$cls=300.00;
+
+
+//CV
+
+//%'s
+
+$ncv=10.17;
+$pcv=8.59;
+$kcv=13.16;
+$cacv=30.54;
+$mgcv=15.26;
+$scv=11.12;
+//ppmn's
+
+$fecv=153.36;
+$cucv=18.13;
+$mncv=38.88;
+$zncv=17.97;
+$bcv=27.96;
+$mocv=69.06;
+$nacv=16.31;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION ARATO-LULA ETAPA Fruto en Crec-2/////
+if($separador[4]=="Fruto en Crec-2"){
+	
+$ns=1.22;
+$ps=0.21;
+$ks=1.69;
+$cas=0.10;
+$mgs=0.11;
+$ss=0.12;
+
+//ppmn's
+
+$fes=77.58;
+$cus=12.01;
+$mns=5.00;
+$zns=44.98;
+$bs=164.75;
+$mos=0.16;
+$nas=297.88;
+$cls=300.00;
+
+
+//CV
+
+//%'s
+
+$ncv=5.77;
+$pcv=7.44;
+$kcv=13.69;
+$cacv=31.33;
+$mgcv=9.72;
+$scv=8.91;
+//ppmn's
+
+$fecv=55.57;
+$cucv=15.99;
+$mncv=0.00;
+$zncv=8.44;
+$bcv=21.72;
+$mocv=36.74;
+$nacv=16.58;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION ARATO-LULA ETAPA Fruto en Crec-3/////
+if($separador[4]=="Fruto en Crec-3"){
+	
+$ns=1.15;
+$ps=0.20;
+$ks=1.87;
+$cas=0.08;
+$mgs=0.10;
+$ss=0.12;
+
+//ppmn's
+
+$fes=51.89;
+$cus=10.43;
+$mns=6.71;
+$zns=41.18;
+$bs=160.50;
+$mos=0.12;
+$nas=364.00;
+$cls=232.13;
+
+
+//CV
+
+//%'s
+
+$ncv=8.77;
+$pcv=13.13;
+$kcv=12.99;
+$cacv=32.83;
+$mgcv=12.50;
+$scv=10.91;
+//ppmn's
+
+$fecv=70.13;
+$cucv=23.32;
+$mncv=25.69;
+$zncv=18.29;
+$bcv=25.57;
+$mocv=51.95;
+$nacv=27.34;
+$clcv=36.37;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION ARATO-LULA ETAPA Fruto en cosecha (≥ 21.5% MS)/////
+if($separador[4]=="Fruto en cosecha (≥ 21.5% MS)"){
+	
+$ns=1.06;
+$ps=0.17;
+$ks=2.03;
+$cas=0.04;
+$mgs=0.06;
+$ss=0.09;
+
+//ppmn's
+
+$fes=29.33;
+$cus=6.42;
+$mns=5.15;
+$zns=23.36;
+$bs=137.10;
+$mos=0.13;
+$nas=429.50;
+$cls=193.00;
+
+
+//CV
+
+//%'s
+
+$ncv=14.23;
+$pcv=13.77;
+$kcv=14.60;
+$cacv=13.36;
+$mgcv=12.60;
+$scv=29.16;
+//ppmn's
+
+$fecv=36.17;
+$cucv=19.09;
+$mncv=5.92;
+$zncv=22.28;
+$bcv=31.68;
+$mocv=47.74;
+$nacv=10.06;
+$clcv=46.56;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION ARATO-LULA ETAPA Fruto en media cosecha (≥ 24% MS)/////
+if($separador[4]=="Fruto en media cosecha (≥ 24% MS)"){
+	
+$ns=1.05;
+$ps=0.24;
+$ks=2.21;
+$cas=0.05;
+$mgs=0.09;
+$ss=0.17;
+
+//ppmn's
+
+$fes=36.79;
+$cus=9.88;
+$mns=5.37;
+$zns=36.49;
+$bs=153.70;
+$mos=0.12;
+$nas=734.00;
+$cls=250.00;
+
+
+//CV
+
+//%'s
+
+$ncv=36.38;
+$pcv=15.44;
+$kcv=8.17;
+$cacv=36.51;
+$mgcv=16.75;
+$scv=16.36;
+//ppmn's
+
+$fecv=41.92;
+$cucv=22.18;
+$mncv=11.82;
+$zncv=25.16;
+$bcv=18.98;
+$mocv=30.54;
+$nacv=34.52;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
 }////FIN DEL CICLO RAZA
 }////FIN DEL CICLO EMPRESA
-}////FIN DEL CICLO TEJIDO
-	
-} ////FIN DEL CICLO WHILE
 
-$insertar="INSERT INTO datos_arato (ID, ptg, patron, estado, situacion, diametro, longitud, pesof, porcentaje, campania, E1, edad, FM, N, P, K, Ca, Mg, S, Fe, Cu, Mn, Zn, B, Mo, Na, Cl, Nr, Pr, Kr, Car, Mgr, Sr, Fer, Cur, Mnr, Znr, Br, Mor, Nar, Clr)
-VALUES ('".$separador[0]."','".$separador[1]."','".$separador[2]."','".$separador[3]."','".$separador[4]."','".$separador[5]."','".$separador[6]."','".$separador[7]."','".$separador[8]."','".$separador[9]."','".$separador[10]."','".$separador[11]."','".$separador[12]."','".$separador[13]."','".$separador[14]."','".$separador[15]."','".$separador[16]."','".$separador[17]."','".$separador[18]."','".$separador[19]."','".$separador[20]."','".$separador[21]."','".$separador[22]."','".$separador[23]."','".$separador[24]."','".$separador[25]."','".$separador[26]."','".$nr."','".$pr."','".$kr."','".$car."','".$mgr."','".$sr."','".$fer."','".$cur."','".$mnr."','".$znr."','".$br."','".$mor."','".$nar."','".$clr."')";
+///// CONDICION Beggie-LULA ETAPA Fruto tamaño aceituna/////
+if($separador[0]=="BEGGIE"){
+if($separador[2]=="Zutano"){
+if($separador[4]=="Fruto tamaño aceituna"){
+	
+$ns=2.03;
+
+$ps=0.27;
+
+$ks=1.52;
+
+$cas=0.17;
+
+$mgs=0.15;
+
+$ss=0.11;
+
+//ppmn's
+
+$fes=40.81;
+
+$cus=10.78;
+
+$mns=5.00;
+
+$zns=40.58;
+
+$bs=101.49;
+
+$mos=0.17;
+
+$nas=250.00;
+
+$cls=300.00;
+
+
+//CV
+
+//%'s
+
+$ncv=61.70;
+
+$pcv=94.09;
+
+$kcv=3.03;
+
+$cacv=11.06;
+
+$mgcv=8.16;
+
+$scv=6.88;
+//ppmn's
+
+$fecv=11.55;
+$cucv=28.44;
+$mncv=0.00;
+$zncv=5.51;
+$bcv=5.65;
+$mocv=60.71;
+$nacv=0.00;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION Beggie-ZUTANO ETAPA Fruto en Crec-1/////
+
+if($separador[4]=="Fruto en Crec-1"){
+	
+$ns=1.25;
+$ps=0.19;
+$ks=1.64;
+$cas=0.10;
+$mgs=0.10;
+$ss=0.11;
+//ppmn's
+
+$fes=32.79;
+$cus=8.21;
+$mns=5.38;
+$zns=33.28;
+$bs=107.50;
+$mos=0.14;
+$nas=263.00;
+$cls=300.00;
+
+//CV
+
+//%'s
+
+$ncv=20.42;
+$pcv=10.24;
+$kcv=18.67;
+$cacv=37.23;
+$mgcv=11.96;
+$scv=25.74;
+//ppmn's
+
+$fecv=17.37;
+$cucv=23.01;
+$mncv=20.30;
+$zncv=16.33;
+$bcv=33.31;
+$mocv=47.41;
+$nacv=13.90;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION Beggie-ZUTANO ETAPA Fruto en Crec-2/////
+
+if($separador[4]=="Fruto en Crec-2"){
+	
+$ns=1.25;
+$ps=0.20;
+$ks=1.76;
+$cas=0.08;
+$mgs=0.10;
+$ss=0.11;
+//ppmn's
+
+$fes=38.56;
+$cus=9.67;
+$mns=5.00;
+$zns=36.12;
+$bs=120.33;
+$mos=0.32;
+$nas=255.55;
+$cls=300.00;
+
+//CV
+
+//%'s
+
+$ncv=6.31;
+$pcv=4.18;
+$kcv=10.12;
+$cacv=14.40;
+$mgcv=10.79;
+$scv=21.41;
+//ppmn's
+
+$fecv=10.72;
+$cucv=12.91;
+$mncv=20.00;
+$zncv=13.63;
+$bcv=32.69;
+$mocv=37.34;
+$nacv=7.20;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION Beggie-ZUTANO ETAPA Fruto en Crec-3/////
+
+if($separador[4]=="Fruto en Crec-3"){
+	
+$ns=1.19;
+$ps=0.17;
+$ks=1.90;
+$cas=0.06;
+$mgs=0.10;
+$ss=00.10;
+//ppmn's
+
+$fes=29.89;
+$cus=8.01;
+$mns=6.06;
+$zns=29.34;
+$bs=134.25;
+$mos=0.16;
+$nas=288.63;
+$cls=202.50;
+
+//CV
+
+//%'s
+
+$ncv=13.51;
+$pcv=19.71;
+$kcv=10.28;
+$cacv=19.44;
+$mgcv=13.78;
+$scv=20.57;
+//ppmn's
+
+$fecv=48.55;
+$cucv=26.21;
+$mncv=28.84;
+$zncv=25.21;
+$bcv=31.49;
+$mocv=27.65;
+$nacv=21.03;
+$clcv=43.86;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION Beggie-ZUTANO ETAPA Fruto en cosecha (≥ 21.5% MS)/////
+
+if($separador[4]=="Fruto en cosecha (≥ 21.5% MS)"){
+	
+$ns=1.09;
+$ps=0.21;
+$ks=2.35;
+$cas=0.06;
+$mgs=0.10;
+$ss=0.11;
+//ppmn's
+
+$fes=20.63;
+$cus=8.87;
+$mns=5.42;
+$zns=29.13;
+$bs=160.67;
+$mos=0.25;
+$nas=446.08;
+$cls=167.53;
+
+//CV
+
+//%'s
+
+$ncv=10.84;
+$pcv=16.11;
+$kcv=11.33;
+$cacv=73.34;
+$mgcv=23.28;
+$scv=22.27;
+//ppmn's
+
+$fecv=59.85;
+$cucv=41.97;
+$mncv=19.45;
+$zncv=23.64;
+$bcv=25.69;
+$mocv=51.25;
+$nacv=34.45;
+$clcv=71.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION Beggie-ZUTANO ETAPA Fruto en media cosecha (≥ 24% MS)/////
+
+if($separador[4]=="Fruto en media cosecha (≥ 24% MS)"){
+	
+$ns=0.87;
+$ps=0.20;
+$ks=1.93;
+$cas=0.03;
+$mgs=0.08;
+$ss=0.12;
+//ppmn's
+
+$fes=14.91;
+$cus=4.40;
+$mns=5.28;
+$zns=19.02;
+$bs=91.64;
+$mos=0.14;
+$nas=535.47;
+$cls=250.00;
+
+//CV
+
+//%'s
+
+$ncv=12.61;
+$pcv=15.46;
+$kcv=17.61;
+$cacv=16.66;
+$mgcv=16.92;
+$scv=24.88;
+//ppmn's
+
+$fecv=32.98;
+$cucv=37.54;
+$mncv=7.57;
+$zncv=36.81;
+$bcv=24.73;
+$mocv=42.94;
+$nacv=33.30;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+     $pn=($separador[10]/$ns)*100;
+	 $in=(100-$pn)*($ncv/100);
+	 $nr1=$pn+$in;       
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+     $pn=($separador[10]/$ns)*100;
+	 $in=($pn-100)*($ncv/100);
+	 $nr1=$pn-$in;
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+     $pp=($separador[11]/$ps)*100;
+	 $ip=(100-$pp)*($pcv/100);
+	 $pr1=$pp+$ip;       
+	}	 
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+     $pp=($separador[11]/$ps)*100;
+	 $ip=($pp-100)*($pcv/100);
+	 $pr1=$pp-$ip;
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+     $pk=($separador[12]/$ks)*100;
+	 $ik=(100-$pk)*($kcv/100);
+	 $kr1=$pk+$ik;       
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+     $pk=($separador[12]/$ks)*100;
+	 $ik=($pk-100)*($kcv/100);
+	 $kr1=$pk-$ik;
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+     $pca=($separador[13]/$cas)*100;
+	 $ica=(100-$pca)*($cacv/100);
+	 $car1=$pca+$ica;       
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+     $pca=($separador[13]/$cas)*100;
+	 $ica=($pca-100)*($cacv/100);
+	 $car1=$pca-$ica;
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+     $pmg=($separador[14]/$mgs)*100;
+	 $img=(100-$pmg)*($mgcv/100);
+	 $mgr1=$pmg+$img;       
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+     $pmg=($separador[14]/$mgs)*100;
+	 $img=($pmg-100)*($mgcv/100);
+	 $mgr1=$pmg-$img;
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+     $ps=($separador[15]/$ss)*100;
+	 $is=(100-$ps)*($scv/100);
+	 $sr1=$ps+$is;       
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+     $ps=($separador[15]/$ss)*100;
+	 $is=($ps-100)*($scv/100);
+	 $sr1=$ps-$is;
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+     $pfe=($separador[16]/$fes)*100;
+	 $ife=(100-$pfe)*($fecv/100);
+	 $fer1=$pfe+$ife;       
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+     $pfe=($separador[16]/$fes)*100;
+	 $ife=($pfe-100)*($fecv/100);
+	 $fer1=$pfe-$ife;
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+     $pcu=($separador[17]/$cus)*100;
+	 $icu=(100-$pcu)*($cucv/100);
+	 $cur1=$pcu+$icu;       
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+     $pcu=($separador[17]/$cus)*100;
+	 $icu=($pcu-100)*($cucv/100);
+	 $cur1=$pcu-$icu;
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+     $pmn=($separador[18]/$mns)*100;
+	 $imn=(100-$pmn)*($mncv/100);
+	 $mnr1=$pmn+$imn;       
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+     $pmn=($separador[18]/$mns)*100;
+	 $imn=($pmn-100)*($mncv/100);
+	 $mnr1=$pmn-$imn;
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+     $pzn=($separador[19]/$zns)*100;
+	 $izn=(100-$pzn)*($zncv/100);
+	 $znr1=$pzn+$izn;       
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+     $pzn=($separador[19]/$zns)*100;
+	 $izn=($pzn-100)*($zncv/100);
+	 $znr1=$pzn-$izn;
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+     $pb=($separador[20]/$bs)*100;
+	 $ib=(100-$pb)*($bcv/100);
+	 $br1=$pb+$ib;       
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+     $pb=($separador[20]/$bs)*100;
+	 $ib=($pb-100)*($bcv/100);
+	 $br1=$pb-$ib;
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+     $pmo=($separador[21]/$mos)*100;
+	 $imo=(100-$mob)*($mocv/100);
+	 $mor1=$pmo+$imo;       
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+     $pmo=($separador[21]/$mos)*100;
+	 $imo=($pmo-100)*($mocv/100);
+	 $mor1=$pmo-$imo;
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+     $pna=($separador[22]/$nas)*100;
+	 $ina=(100-$pna)*($nacv/100);
+	 $nar1=$pna+$ina;       
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+     $pna=($separador[22]/$nas)*100;
+	 $ina=($pna-100)*($nacv/100);
+	 $nar1=$pna-$ina;
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+     $clb=($separador[23]/$cls)*100;
+	 $icl=(100-$clb)*($clcv/100);
+	 $clr1=$clb+$icl;       
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+     $clb=($separador[23]/$cls)*100;
+	 $icl=($clb-100)*($clcv/100);
+	 $clr1=$clb-$icl;
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+	$pr=round($pr1,0);
+	$kr=round($kr1,0);
+	$car=round($car1,0);
+	$mgr=round($mgr1,0);
+	$sr=round($sr1,0);
+	$fer=round($fer1,0);
+	$cur=round($cur1,0);
+	$mnr=round($mnr1,0);
+	$znr=round($znr1,0);
+	$br=round($br1,0);
+	$mor=round($mor1,0);
+	$nar=round($nar1,0);	
+	$clr=round($clr1,0);
+	
+}
+}////FIN DEL CICLO RAZA
+
+///// CONDICION Beggie-LULA ETAPA Fruto tamaño aceituna/////
+if($separador[2]=="Lula"){
+if($separador[4]=="Fruto tamaño aceituna"){
+	
+$ns=2.06;
+$ps=0.30;
+$ks=1.53;
+$cas=0.23;
+$mgs=0.17;
+$ss=0.12;
+
+//ppmn's
+
+$fes=58.84;
+$cus=17.34;
+$mns=5.00;
+$zns=52.48;
+$bs=122.00;
+$mos=0.26;
+$nas=261.20;
+$cls=300.00;
+
+
+//CV
+
+//%'s
+
+$ncv=21.83;
+$pcv=24.04;
+$kcv=2.31;
+$cacv=26.09;
+$mgcv=16.67;
+//ppmn's
+
+$fecv=23.52;
+$cucv=22.61;
+$mncv=0.00;
+$zncv=14.59;
+$bcv=10.43;
+$mocv=138.26;
+$nacv=9.59;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION Beggie-LULA ETAPA Fruto en Crec-1/////
+if($separador[4]=="Fruto en Crec-1"){
+	
+$ns=1.15;
+$ps=0.18;
+$ks=1.66;
+$cas=0.10;
+$mgs=0.09;
+$ss=0.10;
+
+//ppmn's
+
+$fes=33.04;
+$cus=9.16;
+$mns=5.03;
+$zns=32.85;
+$bs=106.95;
+$mos=0.17;
+$nas=257.91;
+$cls=300.00;
+
+
+//CV
+
+//%'s
+
+$ncv=10.71;
+$pcv=8.01;
+$kcv=23.26;
+$cacv=47.65;
+$mgcv=16.67;
+$scv=17.93;
+//ppmn's
+
+$fecv=19.29;
+$cucv=28.23;
+$mncv=1.17;
+$zncv=29.91;
+$bcv=22.06;
+$mocv=46.22;
+$nacv=9.79;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION Beggie-LULA ETAPA Fruto en Crec-2/////
+if($separador[4]=="Fruto en Crec-2"){
+	
+$ns=1.11;
+$ps=0.20;
+$ks=1.83;
+$cas=0.07;
+$mgs=0.09;
+$ss=0.10;
+
+//ppmn's
+
+$fes=33.54;
+$cus=9.58;
+$mns=33.80;
+$bs=148.50;
+$mos=0.25;
+$nas=290.13;
+$cls=300.00;
+
+
+//CV
+
+//%'s
+
+$ncv=13.99;
+$pcv=5.40;
+$kcv=16.54;
+$cacv=26.33;
+$mgcv=17.02;
+$scv=13.39;
+//ppmn's
+
+$fecv=14.78;
+$cucv=22.70;
+$mncv=0.00;
+$zncv=9.22;
+$bcv=27.68;
+$mocv=38.10;
+$nacv=19.35;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION Beggie-LULA ETAPA Fruto en Crec-3/////
+if($separador[4]=="Fruto en Crec-3"){
+	
+$ns=1.21;
+$ps=0.19;
+$ks=1.80;
+$cas=0.07;
+$mgs=0.11;
+$ss=0.13;
+
+//ppmn's
+
+$fes=34.83;
+$cus=9.47;
+$mns=6.31;
+$zns=34.95;
+$bs=142.18;
+$mos=0.15;
+$nas=267.80;
+$cls=198.70;
+
+
+//CV
+
+//%'s
+
+$ncv=12.45;
+$pcv=10.66;
+$kcv=17.08;
+$cacv=23.90;
+$mgcv=15.71;
+$scv=18.79;
+//ppmn's
+
+$fecv=25.89;
+$cucv=29.21;
+$mncv=24.22;
+$zncv=15.67;
+$bcv=29.22;
+$mocv=69.44;
+$nacv=14.28;
+$clcv=54.23;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION Beggie-LULA ETAPA Fruto en cosecha (≥ 21.5% MS)/////
+if($separador[4]=="Fruto en cosecha (≥ 21.5% MS)"){
+	
+$ns=1.13;
+$ps=0.21;
+$ks=2.38;
+$cas=0.04;
+$mgs=0.09;
+$ss=0.11;
+
+//ppmn's
+
+$fes=28.47;
+$cus=9.67;
+$mns=5.12;
+$zns=30.29;
+$bs=170.80;
+$mos=0.27;
+$nas=450.40;
+$cls=180.29;
+
+
+//CV
+
+//%'s
+
+$ncv=7.87;
+$pcv=22.21;
+$kcv=13.11;
+$cacv=25.50;
+$mgcv=26.40;
+$scv=21.42;
+//ppmn's
+
+$fecv=26.64;
+$cucv=40.65;
+$mncv=4.95;
+$zncv=27.18;
+$bcv=19.84;
+$mocv=43.29;
+$nacv=35.89;
+$clcv=70.11;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=(100-$pn)*($ncv/100);
+
+	 $nr1=$pn+$in;       
+
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+
+     $pn=($separador[10]/$ns)*100;
+
+	 $in=($pn-100)*($ncv/100);
+
+	 $nr1=$pn-$in;
+
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=(100-$pp)*($pcv/100);
+
+	 $pr1=$pp+$ip;       
+
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+
+     $pp=($separador[11]/$ps)*100;
+
+	 $ip=($pp-100)*($pcv/100);
+
+	 $pr1=$pp-$ip;
+
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=(100-$pk)*($kcv/100);
+
+	 $kr1=$pk+$ik;       
+
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+
+     $pk=($separador[12]/$ks)*100;
+
+	 $ik=($pk-100)*($kcv/100);
+
+	 $kr1=$pk-$ik;
+
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=(100-$pca)*($cacv/100);
+
+	 $car1=$pca+$ica;       
+
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+
+     $pca=($separador[13]/$cas)*100;
+
+	 $ica=($pca-100)*($cacv/100);
+
+	 $car1=$pca-$ica;
+
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=(100-$pmg)*($mgcv/100);
+
+	 $mgr1=$pmg+$img;       
+
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+
+     $pmg=($separador[14]/$mgs)*100;
+
+	 $img=($pmg-100)*($mgcv/100);
+
+	 $mgr1=$pmg-$img;
+
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=(100-$ps)*($scv/100);
+
+	 $sr1=$ps+$is;       
+
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+
+     $ps=($separador[15]/$ss)*100;
+
+	 $is=($ps-100)*($scv/100);
+
+	 $sr1=$ps-$is;
+
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=(100-$pfe)*($fecv/100);
+
+	 $fer1=$pfe+$ife;       
+
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+
+     $pfe=($separador[16]/$fes)*100;
+
+	 $ife=($pfe-100)*($fecv/100);
+
+	 $fer1=$pfe-$ife;
+
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=(100-$pcu)*($cucv/100);
+
+	 $cur1=$pcu+$icu;       
+
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+
+     $pcu=($separador[17]/$cus)*100;
+
+	 $icu=($pcu-100)*($cucv/100);
+
+	 $cur1=$pcu-$icu;
+
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=(100-$pmn)*($mncv/100);
+
+	 $mnr1=$pmn+$imn;       
+
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+
+     $pmn=($separador[18]/$mns)*100;
+
+	 $imn=($pmn-100)*($mncv/100);
+
+	 $mnr1=$pmn-$imn;
+
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=(100-$pzn)*($zncv/100);
+
+	 $znr1=$pzn+$izn;       
+
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+
+     $pzn=($separador[19]/$zns)*100;
+
+	 $izn=($pzn-100)*($zncv/100);
+
+	 $znr1=$pzn-$izn;
+
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=(100-$pb)*($bcv/100);
+
+	 $br1=$pb+$ib;       
+
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+
+     $pb=($separador[20]/$bs)*100;
+
+	 $ib=($pb-100)*($bcv/100);
+
+	 $br1=$pb-$ib;
+
+
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=(100-$mob)*($mocv/100);
+
+	 $mor1=$pmo+$imo;       
+
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+
+     $pmo=($separador[21]/$mos)*100;
+
+	 $imo=($pmo-100)*($mocv/100);
+
+	 $mor1=$pmo-$imo;
+
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=(100-$pna)*($nacv/100);
+
+	 $nar1=$pna+$ina;       
+
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+
+     $pna=($separador[22]/$nas)*100;
+
+	 $ina=($pna-100)*($nacv/100);
+
+	 $nar1=$pna-$ina;
+
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=(100-$clb)*($clcv/100);
+
+	 $clr1=$clb+$icl;       
+
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+
+     $clb=($separador[23]/$cls)*100;
+
+	 $icl=($clb-100)*($clcv/100);
+
+	 $clr1=$clb-$icl;
+
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+
+	$pr=round($pr1,0);
+
+	$kr=round($kr1,0);
+
+	$car=round($car1,0);
+
+	$mgr=round($mgr1,0);
+
+	$sr=round($sr1,0);
+
+	$fer=round($fer1,0);
+
+	$cur=round($cur1,0);
+
+	$mnr=round($mnr1,0);
+
+	$znr=round($znr1,0);
+
+	$br=round($br1,0);
+	
+	$mor=round($mor1,0);
+	
+	$nar=round($nar1,0);
+	
+	$clr=round($clr1,0);
+	
+}
+
+///// CONDICION Beggie-LULA ETAPA Fruto en media cosecha (≥ 24% MS)/////
+if($separador[4]=="Fruto en media cosecha (≥ 24% MS)"){
+	
+$ns=0.99;
+$ps=0.23;
+$ks=1.98;
+$cas=0.03;
+$mgs=0.08;
+$ss=0.14;
+
+//ppmn's
+
+$fes=24.98;
+$cus=9.51;
+$mns=15.81;
+$zns=32.56;
+$bs=119.50;
+$mos=0.14;
+$nas=416.22;
+$cls=250.00;
+
+
+//CV
+
+//%'s
+
+$ncv=8.20;
+$pcv=20.25;
+$kcv=11.33;
+$cacv=18.04;
+$mgcv=14.56;
+$scv=18.22;
+//ppmn's
+
+$fecv=45.01;
+$cucv=52.00;
+$mncv=211.63;
+$zncv=32.37;
+$bcv=29.13;
+$mocv=42.43;
+$nacv=29.39;
+$clcv=0.00;
+
+if ($separador[10] < $ns && $separador[10]>0 )
+
+    {
+     $pn=($separador[10]/$ns)*100;
+	 $in=(100-$pn)*($ncv/100);
+	 $nr1=$pn+$in;       
+	}	 
+
+if ($separador[10] > $ns && $separador[10]>0)
+
+    {
+     $pn=($separador[10]/$ns)*100;
+	 $in=($pn-100)*($ncv/100);
+	 $nr1=$pn-$in;
+	}
+
+if ($separador[11] < $ps && $separador[11]>0)
+
+    {
+     $pp=($separador[11]/$ps)*100;
+	 $ip=(100-$pp)*($pcv/100);
+	 $pr1=$pp+$ip;       
+	}	 
+   
+
+if ($separador[11] > $ps && $separador[11]>0)
+
+    {
+     $pp=($separador[11]/$ps)*100;
+	 $ip=($pp-100)*($pcv/100);
+	 $pr1=$pp-$ip;
+	}
+
+if ($separador[12] < $ks && $separador[12]>0)
+
+    {
+     $pk=($separador[12]/$ks)*100;
+	 $ik=(100-$pk)*($kcv/100);
+	 $kr1=$pk+$ik;       
+	}	 	   
+
+if ($separador[12] > $ks && $separador[12]>0)
+
+    {
+     $pk=($separador[12]/$ks)*100;
+	 $ik=($pk-100)*($kcv/100);
+	 $kr1=$pk-$ik;
+	}
+
+if ($separador[13] < $cas && $separador[13]>0)
+
+    {
+     $pca=($separador[13]/$cas)*100;
+	 $ica=(100-$pca)*($cacv/100);
+	 $car1=$pca+$ica;       
+	}	    
+
+if ($separador[13] > $cas && $separador[13]>0)
+
+    {
+     $pca=($separador[13]/$cas)*100;
+	 $ica=($pca-100)*($cacv/100);
+	 $car1=$pca-$ica;
+	}
+
+if ($separador[14] < $mgs && $separador[14]>0)
+
+    {
+     $pmg=($separador[14]/$mgs)*100;
+	 $img=(100-$pmg)*($mgcv/100);
+	 $mgr1=$pmg+$img;       
+	}	    
+
+if ($separador[14] > $mgs && $separador[14]>0)
+
+    {
+     $pmg=($separador[14]/$mgs)*100;
+	 $img=($pmg-100)*($mgcv/100);
+	 $mgr1=$pmg-$img;
+	}
+
+if ($separador[15] < $ss && $separador[15]>0)
+
+    {
+     $ps=($separador[15]/$ss)*100;
+	 $is=(100-$ps)*($scv/100);
+	 $sr1=$ps+$is;       
+	}	 
+
+if ($separador[15] > $ss && $separador[15]>0)
+
+    {
+     $ps=($separador[15]/$ss)*100;
+	 $is=($ps-100)*($scv/100);
+	 $sr1=$ps-$is;
+	}
+
+if ($separador[16] < $fes && $separador[16]>0)
+
+    {
+     $pfe=($separador[16]/$fes)*100;
+	 $ife=(100-$pfe)*($fecv/100);
+	 $fer1=$pfe+$ife;       
+	}	 
+
+if ($separador[16] > $fes && $separador[16]>0)
+
+    {
+     $pfe=($separador[16]/$fes)*100;
+	 $ife=($pfe-100)*($fecv/100);
+	 $fer1=$pfe-$ife;
+	}
+
+if ($separador[17] < $cus && $separador[17]>0)
+
+    {
+     $pcu=($separador[17]/$cus)*100;
+	 $icu=(100-$pcu)*($cucv/100);
+	 $cur1=$pcu+$icu;       
+	}	    
+
+if ($separador[17] > $cus && $separador[17]>0)
+
+    {
+     $pcu=($separador[17]/$cus)*100;
+	 $icu=($pcu-100)*($cucv/100);
+	 $cur1=$pcu-$icu;
+	}
+
+if ($separador[18] < $mns && $separador[18]>0)
+
+    {
+     $pmn=($separador[18]/$mns)*100;
+	 $imn=(100-$pmn)*($mncv/100);
+	 $mnr1=$pmn+$imn;       
+	}	 
+
+if ($separador[18] > $mns && $separador[18]>0)
+
+    {
+     $pmn=($separador[18]/$mns)*100;
+	 $imn=($pmn-100)*($mncv/100);
+	 $mnr1=$pmn-$imn;
+	}
+
+if ($separador[19] < $zns && $separador[19]>0)
+
+    {
+     $pzn=($separador[19]/$zns)*100;
+	 $izn=(100-$pzn)*($zncv/100);
+	 $znr1=$pzn+$izn;       
+	}	   
+
+if ($separador[19] > $zns && $separador[19]>0)
+
+    {
+     $pzn=($separador[19]/$zns)*100;
+	 $izn=($pzn-100)*($zncv/100);
+	 $znr1=$pzn-$izn;
+	}
+
+if ($separador[20] < $bs && $separador[20]>0)
+
+    {
+     $pb=($separador[20]/$bs)*100;
+	 $ib=(100-$pb)*($bcv/100);
+	 $br1=$pb+$ib;       
+	}	 
+
+if ($separador[20] > $bs && $separador[20]>0)
+
+    {
+     $pb=($separador[20]/$bs)*100;
+	 $ib=($pb-100)*($bcv/100);
+	 $br1=$pb-$ib;
+	}
+
+if ($separador[21] < $mos && $separador[21]>0)
+
+    {
+     $pmo=($separador[21]/$mos)*100;
+	 $imo=(100-$mob)*($mocv/100);
+	 $mor1=$pmo+$imo;       
+	}	 
+
+if ($separador[21]> $mos && $separador[21]>0)
+
+    {
+     $pmo=($separador[21]/$mos)*100;
+	 $imo=($pmo-100)*($mocv/100);
+	 $mor1=$pmo-$imo;
+	}
+	
+	if ($separador[22] < $nas && $separador[22]>0)
+
+    {
+     $pna=($separador[22]/$nas)*100;
+	 $ina=(100-$pna)*($nacv/100);
+	 $nar1=$pna+$ina;       
+	}	 
+
+if ($separador[22] > $nas && $separador[22]>0)
+
+    {
+     $pna=($separador[22]/$nas)*100;
+	 $ina=($pna-100)*($nacv/100);
+	 $nar1=$pna-$ina;
+	}
+
+if ($separador[23] < $cls && $separador[23]>0)
+
+    {
+     $clb=($separador[23]/$cls)*100;
+	 $icl=(100-$clb)*($clcv/100);
+	 $clr1=$clb+$icl;       
+	}	 
+
+if ($separador[23]> $cls && $separador[23]>0)
+
+    {
+     $clb=($separador[23]/$cls)*100;
+	 $icl=($clb-100)*($clcv/100);
+	 $clr1=$clb-$icl;
+	}
+
+	//si el Estandar y el valor son iguales
+	if($separador[10]==$ns)
+	{
+	$nr1=100;
+	}
+	if($separador[11]==$ps)
+	{
+	$pr1=100;
+	}
+	if($separador[12]==$ks)
+	{
+	$kr1=100;
+	}
+	if($separador[13]==$cas)
+	{
+	$car1=100;
+	}
+	if($separador[14]==$mgs)
+	{
+	$mgr1=100;
+	}
+	if($separador[15]==$ss)
+	{
+	$sr1=100;
+	}
+	if($separador[16]==$fes)
+	{
+	$fer1=100;
+	}
+	if($separador[17]==$cus)
+	{
+	$cur1=100;
+	}
+	if($separador[18]==$mns)
+	{
+	$mnr1=100;
+	}
+	if($separador[19]==$zns)
+	{
+	$znr1=100;
+	}
+	if($separador[20]==$bs)
+	{
+	$br1=100;
+	}	
+	if($separador[21]==$mos)
+	{
+	$mor1=100;
+	}	
+	if($separador[22]==$nas)
+	{
+	$nar1=100;
+	}	
+	if($separador[23]==$cls)
+	{
+	$clr1=100;
+	}	
+
+//si es 0
+    if($separador[10]==0)
+	{
+	$nr1=0;
+	}
+	if($separador[11]==0)
+	{
+	$pr1=0;
+	}
+	if($separador[12]==0)
+	{
+	$kr1=0;
+	}
+	if($separador[13]==0)
+	{
+	$car1=0;
+	}
+	if($separador[14]==0)
+	{
+	$mgr1=0;
+	}
+	if($separador[15]==0)
+	{
+	$sr1=0;
+	}
+	if($separador[16]==0)
+	{
+	$fer1=0;
+	}
+	if($separador[17]==0)
+	{
+	$cur1=0;
+	}
+	if($separador[18]==0)
+	{
+	$mnr1=0;
+	}
+	if($separador[19]==0)
+	{
+	$znr1=0;
+	}
+	if($separador[20]==0)
+	{
+	$br1=0;
+	}	
+	if($separador[21]==0)
+	{
+	$mor1=0;
+	}
+	if($separador[22]==0)
+	{
+	$nar1=0;
+	}
+	if($separador[23]==0)
+	{
+	$clr1=0;
+	}	
+
+	$nr=round($nr1,0);
+	$pr=round($pr1,0);
+	$kr=round($kr1,0);
+	$car=round($car1,0);
+	$mgr=round($mgr1,0);
+	$sr=round($sr1,0);
+	$fer=round($fer1,0);
+	$cur=round($cur1,0);
+	$mnr=round($mnr1,0);
+	$znr=round($znr1,0);
+	$br=round($br1,0);
+	$mor=round($mor1,0);
+	$nar=round($nar1,0);
+	$clr=round($clr1,0);
+	
+}
+}////FIN DEL CICLO RAZA
+}////FIN DEL CICLO EMPRESA
+}////FIN DEL CICLO TEJIDO	
+}////FIN DEL CICLO WHILE
+
+$insertar="INSERT INTO datos_arato1 (Empresa, Cultivar, Patron, Tejido, Etapa, Campana, Lote, Turno, Modulo, FM, N, P, K, Ca, Mg, S, Fe, Cu, Mn, Zn, B, Mo, Na, Cl, Nr, Pr, Kr, Car, Mgr, Sr, Fer, Cur, Mnr, Znr, Br, Mor, Nar, Clr)
+VALUES ('".$separador[0]."','".$separador[1]."','".$separador[2]."','".$separador[3]."','".$separador[4]."','".$separador[5]."','".$separador[6]."','".$separador[7]."','".$separador[8]."','".$separador[9]."','".$separador[10]."','".$separador[11]."','".$separador[12]."','".$separador[13]."','".$separador[14]."','".$separador[15]."','".$separador[16]."','".$separador[17]."','".$separador[18]."','".$separador[19]."','".$separador[20]."','".$separador[21]."','".$separador[22]."','".$separador[23]."','".$nr."','".$pr."','".$kr."','".$car."','".$mgr."','".$sr."','".$fer."','".$cur."','".$mnr."','".$znr."','".$br."','".$mor."','".$nar."','".$clr."')";
 
 $result= mysql_query($insertar, $cnx);
 if (! $result){

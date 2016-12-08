@@ -415,24 +415,33 @@ $cantre = 10;
                                                 </p>
                                                 <!--  SELECT OPCIONALES   -->
                                                 <div id="div_2" class="contenido">
-                                                    <h4 class="wpcf7-mail-sent-ok"> Elija la etapa:</h4>
+                                                    <h4 class="wpcf7-mail-sent-ok"> Elija la etapa Foliar:</h4>
                                                     <p>
                                                       <select name="aplicacion" id="aplication">
-                                                          <option value="0" selected>Seleccione la etapa2</option>
-                                                          <option value="1">Remoción Nutrimental</option>
-                                                          <option value="2">Diagnóstico Nutrimental Foliar</option>
-                                                          <option value="3">Diagnóstico Nutrimental Pulpa</option>
+                                                    <option value="0" selected>Seleccione una opción</option>
+                                                    <option value="Hojas de 5 cm">Hojas de 5 cm</option>
+                                                    <option value="Antesis">Antesis</option>
+                                                    <option value="Cuajado de fruto">Cuajado de fruto</option>
+                                                    <option value="Fruto tamaño aceituna">Fruto tamaño aceituna</option>
+                                                    <option value="Fruto en Crec-1">Fruto en Crec-1</option>
+                                                    <option value="Fruto en Crec-1">Fruto en Crec-2</option>
+                                                    <option value="Fruto en Crec-1">Fruto en Crec-3</option>
+                                                    <option value="Fruto en cosecha (≥ 21.5% MS)">Fruto en cosecha (≥ 21.5% MS)</option>
+                                                    <option value="Fruto en media cosecha (≥ 24% MS)">Fruto en media cosecha (≥ 24% MS)</option>
                                                       </select>
                                                     </p>
                                                 </div>
                                                 <div id="div_3" class="contenido">
-                                                    <h4 class="wpcf7-mail-sent-ok"> Elija la etapa:</h4>
+                                                    <h4 class="wpcf7-mail-sent-ok"> Elija la etapa de la pulpa:</h4>
                                                     <p>
                                                       <select name="aplicacion" id="aplication">
-                                                          <option value="0" selected>Seleccione la etapa3</option>
-                                                          <option value="1">Remoción Nutrimental</option>
-                                                          <option value="2">Diagnóstico Nutrimental Foliar</option>
-                                                          <option value="3">Diagnóstico Nutrimental Pulpa</option>
+                                                    <option value="0" selected>Seleccione una opción</option>
+                                                    <option value="Fruto tamaño aceituna">Fruto tamaño aceituna</option>
+                                                    <option value="Fruto en Crec-1">Fruto en Crec-1</option>
+                                                    <option value="Fruto en Crec-1">Fruto en Crec-2</option>
+                                                    <option value="Fruto en Crec-1">Fruto en Crec-3</option>
+                                                    <option value="Fruto en cosecha (≥ 21.5% MS)">Fruto en cosecha (≥ 21.5% MS)</option>
+                                                    <option value="Fruto en media cosecha (≥ 24% MS)">Fruto en media cosecha (≥ 24% MS)</option>
                                                       </select>
                                                     </p>
                                                 </div>
