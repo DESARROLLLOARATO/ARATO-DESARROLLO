@@ -1,6 +1,7 @@
 <?php
 
-$con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
+//$con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
+$con = new mysqli('localhost', 'root', '', 'prueba');
         
 $con->query("SET NAMES 'utf8'");
 
@@ -12,29 +13,32 @@ if($con->connect_errno > 0){
 $empresa = null;
 
 if(isset($_GET["empresa"]) and $_GET["empresa"]==1){
-    $empresa = "BEGGIE PER";
+    $empresa = "BEGGIE";
 }
 if(isset($_GET["empresa"]) and $_GET["empresa"]==2){
-    $empresa = "ARATO PER";
+    $empresa = "ARATO";
 }
 if(isset($_GET["empresa"]) and $_GET["empresa"]==3){
     $empresa = "INAGRO";
 }
 
-$consulta = "SELECT DISTINCT MODULO FROM FILTROS WHERE EMPRESA = '$empresa'";
+$consulta = "SELECT DISTINCT Modulo FROM datos_arato1 WHERE Empresa = '$empresa'";
 $res = mysqli_query($con,$consulta);
 
-$consulta2 = "SELECT DISTINCT PATRON FROM FILTROS WHERE EMPRESA = '$empresa'";
+$consulta2 = "SELECT DISTINCT Patron FROM datos_arato1 WHERE Empresa = '$empresa'";
 $res2 = mysqli_query($con,$consulta2);
 
-$consulta3 = "SELECT DISTINCT TURNO FROM FILTROS WHERE EMPRESA = '$empresa'";
+$consulta3 = "SELECT DISTINCT Turno FROM datos_arato1 WHERE Empresa = '$empresa'";
 $res3 = mysqli_query($con,$consulta3);  
 
-$consulta4 = "SELECT DISTINCT LOTE FROM FILTROS WHERE EMPRESA = '$empresa'";
+$consulta4 = "SELECT DISTINCT Lote FROM datos_arato1 WHERE Empresa = '$empresa'";
 $res4 = mysqli_query($con,$consulta4);
 
-$consulta5 = "SELECT DISTINCT CULTIVAR FROM FILTROS WHERE EMPRESA = '$empresa'";
+$consulta5 = "SELECT DISTINCT Cultivar FROM datos_arato1 WHERE Empresa = '$empresa'";
 $res5 = mysqli_query($con,$consulta5);
+
+$consulta10 = "SELECT DISTINCT Campana FROM datos_arato1 WHERE Empresa = '$empresa'";
+$res10 = mysqli_query($con,$consulta10);
 //FIN LLENAR SELECTS
 
 $und="Toneladas";
@@ -392,16 +396,10 @@ $cantre = 10;
                                               <td width="100" align="left"><h4 class="wpcf7-mail-sent-ok">Campaña:</h4>
                                                 <p>
                                                   <select name="campana" id="select_campana">
-                                                    <option value="0">Seleccione una campaña</option>
-                                                    <option value="1">2016-2017</option>
-                                                    <option value="2">2017-2018</option>
-                                                    <option value="3">2018-2019</option>
-                                                    <option value="4">2019-2020</option>
-                                                    <option value="5">2020-2021</option>
-                                                    <option value="6">2021-2022</option>
-                                                    <option value="7">2022-2023</option>
-                                                    <option value="8">2023-2024</option>
-                                                    <option value="9">2024-2025</option>
+                                                      <option value="0">Seleccione la campaña</option>
+                                                    <?php while($datos6 = mysqli_fetch_row($res10)) { ?>
+                                                    <option value="<?php echo $datos6[0] ?>"><?php echo $datos6[0] ?></option>
+                                                    <?php } ?>
                                                   </select>
                                                 </p>
                                                 <h4 class="wpcf7-mail-sent-ok"> Aplicación:</h4>
@@ -417,15 +415,15 @@ $cantre = 10;
                                                 <div id="div_2" class="contenido">
                                                     <h4 class="wpcf7-mail-sent-ok"> Elija la etapa Foliar:</h4>
                                                     <p>
-                                                      <select name="aplicacion" id="aplication">
+                                                      <select name="aplicacion2" id="aplication">
                                                     <option value="0" selected>Seleccione una opción</option>
                                                     <option value="Hojas de 5 cm">Hojas de 5 cm</option>
                                                     <option value="Antesis">Antesis</option>
                                                     <option value="Cuajado de fruto">Cuajado de fruto</option>
                                                     <option value="Fruto tamaño aceituna">Fruto tamaño aceituna</option>
                                                     <option value="Fruto en Crec-1">Fruto en Crec-1</option>
-                                                    <option value="Fruto en Crec-1">Fruto en Crec-2</option>
-                                                    <option value="Fruto en Crec-1">Fruto en Crec-3</option>
+                                                    <option value="Fruto en Crec-2">Fruto en Crec-2</option>
+                                                    <option value="Fruto en Crec-3">Fruto en Crec-3</option>
                                                     <option value="Fruto en cosecha (≥ 21.5% MS)">Fruto en cosecha (≥ 21.5% MS)</option>
                                                     <option value="Fruto en media cosecha (≥ 24% MS)">Fruto en media cosecha (≥ 24% MS)</option>
                                                       </select>
@@ -434,12 +432,12 @@ $cantre = 10;
                                                 <div id="div_3" class="contenido">
                                                     <h4 class="wpcf7-mail-sent-ok"> Elija la etapa de la pulpa:</h4>
                                                     <p>
-                                                      <select name="aplicacion" id="aplication">
+                                                      <select name="aplicacion3" id="aplication">
                                                     <option value="0" selected>Seleccione una opción</option>
                                                     <option value="Fruto tamaño aceituna">Fruto tamaño aceituna</option>
                                                     <option value="Fruto en Crec-1">Fruto en Crec-1</option>
-                                                    <option value="Fruto en Crec-1">Fruto en Crec-2</option>
-                                                    <option value="Fruto en Crec-1">Fruto en Crec-3</option>
+                                                    <option value="Fruto en Crec-2">Fruto en Crec-2</option>
+                                                    <option value="Fruto en Crec-3">Fruto en Crec-3</option>
                                                     <option value="Fruto en cosecha (≥ 21.5% MS)">Fruto en cosecha (≥ 21.5% MS)</option>
                                                     <option value="Fruto en media cosecha (≥ 24% MS)">Fruto en media cosecha (≥ 24% MS)</option>
                                                       </select>
@@ -461,6 +459,8 @@ $cantre = 10;
                                 
                                 <div id="graficas" style="border-top: 2px solid #7DCC68; padding-top: 30px;">
                                     
+                                    
+                                    <!--     GENERAR TABLA DE REMOCION    -->
                                     <?php if (isset($_GET["aplicacion"]) and $_GET["aplicacion"] ==1 ){  ?>
                                       <table class="tabla">
                                         <tr>
@@ -733,6 +733,19 @@ $cantre = 10;
                                           </tr>
                                     </table>
                                     <?php }  ?>
+                                    <!--    FINAL TABLA DE REMOCION    -->
+                                    <!--     /////////////////////////////////////////////////////////////////////////////////    -->
+                                    <!--     GENERAR GRAFICA FOLIAR    -->
+                                    
+                                    <?php 
+                                    if (isset($_GET["aplicacion"]) and $_GET["aplicacion"] ==2 )
+                                    {
+                                        include ("graficar_fruta.php");
+                                    }  
+                                    ?>
+                                    <!--     FINAL GENERAR GRAFICA FOLIAR    -->
+                                    
+                                    
                                 </div>
                             
                                 <!--  FINAL CONTENIDO GRAFICAS    -->
