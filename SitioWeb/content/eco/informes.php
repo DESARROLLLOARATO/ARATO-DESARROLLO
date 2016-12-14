@@ -1,7 +1,7 @@
 <?php
 
-//$con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
-$con = new mysqli('localhost', 'root', '', 'prueba');
+$con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
+//$con = new mysqli('localhost', 'root', '', 'prueba');
         
 $con->query("SET NAMES 'utf8'");
 
@@ -407,12 +407,12 @@ $cantre = 10;
                                                   <select name="aplicacion" id="aplication">
                                                       <option value="0" selected>Seleccione la aplicación</option>
                                                       <option value="1">Remoción Nutrimental</option>
-                                                      <option value="2">Diagnóstico Nutrimental Foliar</option>
-                                                      <option value="3">Diagnóstico Nutrimental Pulpa</option>
+                                                      <option value="Foliar">Diagnóstico Nutrimental Foliar</option>
+                                                      <option value="Pulpa">Diagnóstico Nutrimental Pulpa</option>
                                                   </select>
                                                 </p>
                                                 <!--  SELECT OPCIONALES   -->
-                                                <div id="div_2" class="contenido">
+                                                <div id="div_Foliar" class="contenido">
                                                     <h4 class="wpcf7-mail-sent-ok"> Elija la etapa Foliar:</h4>
                                                     <p>
                                                       <select name="aplicacion2" id="aplication">
@@ -429,7 +429,7 @@ $cantre = 10;
                                                       </select>
                                                     </p>
                                                 </div>
-                                                <div id="div_3" class="contenido">
+                                                <div id="div_Pulpa" class="contenido">
                                                     <h4 class="wpcf7-mail-sent-ok"> Elija la etapa de la pulpa:</h4>
                                                     <p>
                                                       <select name="aplicacion3" id="aplication">
@@ -738,7 +738,7 @@ $cantre = 10;
                                     <!--     GENERAR GRAFICA FOLIAR    -->
                                     
                                     <?php 
-                                    if (isset($_GET["aplicacion"]) and $_GET["aplicacion"] ==2 )
+                                    if (isset($_GET["aplicacion"]) and $_GET["aplicacion"] == "Pulpa" || $_GET["aplicacion"] == "Foliar")
                                     {
                                         include ("graficar_fruta.php");
                                     }  

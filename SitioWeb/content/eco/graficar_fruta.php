@@ -3,11 +3,6 @@
 //$ids = $_GET["ids"];
 $OK = "OK";
 
-if (isset($_GET["aplicacion"]) and $_GET["aplicacion"] ==2 )
-{
-    $tejido = "Foliar";
-}  
-
 //$tejido = $_GET["aplicacion"];
 $ddf = $_GET["aplicacion2"];
 $cma = $_GET["campana"];
@@ -15,11 +10,13 @@ $patron=$_GET["patron"];
 $modulo=$_GET["modulo"];
 $turno=$_GET["turno"];
 $lote=$_GET["lote"];
+$tejido=$_GET["aplicacion"];
 
 
-
-$consulta20 = "SELECT Empresa, Cultivar, Patron, Tejido, Etapa, Campana, Lote, Turno, Modulo, N, P, K, Ca, Mg, S, Fe, Cu, Mn, Zn, B, Mo, Na, Cl, Nr, Pr, Kr, Car, Mgr, Sr, Fer, Cur, Mnr, Znr, Br, Mor, Nar, Clr FROM datos_arato1 WHERE Empresa='$empresa' and Tejido ='$tejido' and Etapa ='$ddf' and Campana='$cma' and Modulo=$modulo and Turno='$turno' and Lote=$lote";
+$consulta20 = "SELECT Empresa, Cultivar, Patron, Tejido, Etapa, Campana, Lote, Turno, Modulo, N, P, K, Ca, Mg, S, Fe, Cu, Mn, Zn, B, Mo, Na, Cl, Nr, Pr, Kr, Car, Mgr, Sr, Fer, Cur, Mnr, Znr, Br, Mor, Nar, Clr FROM datos_arato1 WHERE Empresa='$empresa' and Tejido ='$tejido' and Etapa ='$ddf' and Campana='$cma' and Modulo='$modulo' and Turno='$turno' and Lote='$lote'";
 $res20 = mysqli_query($con,$consulta20);
+
+echo $consulta20;
 ?>
 
 <div id="grafica">
