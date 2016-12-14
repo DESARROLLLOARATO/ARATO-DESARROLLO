@@ -12,22 +12,113 @@ $turno=$_GET["turno"];
 $lote=$_GET["lote"];
 $tejido=$_GET["aplicacion"];
 
-
 $consulta20 = "SELECT Empresa, Cultivar, Patron, Tejido, Etapa, Campana, Lote, Turno, Modulo, N, P, K, Ca, Mg, S, Fe, Cu, Mn, Zn, B, Mo, Na, Cl, Nr, Pr, Kr, Car, Mgr, Sr, Fer, Cur, Mnr, Znr, Br, Mor, Nar, Clr FROM datos_arato1 WHERE Empresa='$empresa' and Tejido ='$tejido' and Etapa ='$ddf' and Campana='$cma' and Modulo='$modulo' and Turno='$turno' and Lote='$lote'";
 $res20 = mysqli_query($con,$consulta20);
 
 echo $consulta20;
 ?>
+<meta charset="UTF-8">
+   <script src="js/anychart.min.js"></script>
+   <script src="js/anychart-ui.min.js"></script>
+<style>
+table.tabla2 tr:nth-child(even) {
+        background-color: #eee;
+    }
 
+table.tabla2 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+</style>
+	
 <div id="grafica">
-    <h1>AQUI GRAFICA</h1>
+    <h3>Información sobre del informe:</h3>
 </div>
 
-<div id="tabla_foliar">
-    <?php
+<div id="tabla_foliar-fruto">
+      <?php
+	//Arreglo de la consulta
     $Fila=mysqli_fetch_row($res20);
     ?>
-    <table class="tabla2" style="margin: auto;">
+  <table id="informacion" class="tabla2"> 
+    	<tr> 
+        	<td width="120" class="Estilo71" style="color: #249f04;"><div align="center">Empresa</div></td>
+            <td width="120" class="Estilo71" style="color: #249f04;"><div align="center">Cultivar</div></td>
+            <td width="120" class="Estilo71" style="color: #249f04;"><div align="center">Patron</div></td>
+            <td width="120" class="Estilo71" style="color: #249f04;"><div align="center">Tejido</div></td>
+            <td width="120" class="Estilo71" style="color: #249f04;"><div align="center">Etapa</div></td>
+            <td width="120" class="Estilo71" style="color: #249f04;"><div align="center">Campaña</div></td>
+        </tr>
+        <tr> 
+       	  <td height="15" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[0] ?></div></td>
+          <td height="15" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[1] ?></div></td>
+          <td height="15" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[2] ?></div></td>
+          <td height="15" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[3] ?></div></td>
+          <td height="15" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[4] ?></div></td>
+          <td height="15" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[5] ?></div></td>
+        </tr>
+    </table>
+    <table id="grafico" class="tabla2">
+        <tr> 
+       	  <td width="120" height="15"> 
+                <script type="text/javascript">
+         anychart.onDocumentReady(function() {
+    // create column chart
+    chart = anychart.column3d();
+
+    // set container id for the chart
+    chart.container('container');
+
+    // turn on chart animation
+    chart.animation(true);
+    
+    // set chart title text settings
+    chart.title('Top 10 Cosmetic Products by Revenue');
+
+    // create area series with passed data
+    chart.column([
+['Rouge', '80540'],
+['Foundation', '94190'],
+['Mascara', '102610'],
+['Lip gloss', '110430'],
+['Pomade', '128000'],
+['Nail polish', '143760'],
+['Eyebrow pencil', '170670'],
+['Eyeliner', '213210'],
+['Eyeshadows', '249980']
+    ]);
+
+    chart.tooltip()
+    .position('top')
+    .anchor('bottom')
+    .offsetX(0)
+    .offsetY(5)
+    .textFormatter('${%Value}');
+
+    // set scale minimum
+    chart.yScale().minimum(0);
+
+    // set yAxis labels formatter
+    chart.yAxis().labels().textFormatter(function() {
+return this.value.toLocaleString();
+    });
+
+    chart.tooltip().positionMode('point');
+    chart.interactivity().hoverMode('byX');
+
+    chart.xAxis().title('Products by Revenue');
+    chart.yAxis().title('Revenue in Dollars');
+
+    chart.grid();
+    chart.grid(1).layout('vertical');
+
+    // initiate chart drawing
+    chart.draw();
+});
+        </script>
+          </td>
+        </tr>
+    </table>
+	<table id="tablanutrientes" class="tabla2" style="margin: auto;">
         <tr>
           <td colspan="6" align="center"></td>
         </tr>
@@ -85,10 +176,10 @@ echo $consulta20;
         <tr>
           <td height="19" valign="top" class="Estilo71"><div align="right">Azufre (S)</div></td>
           <td height="19" align="center" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[14]; ?></div></td>
-            <td height="19" align="center" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[28]; ?></div></td>
+          <td height="19" align="center" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[28]; ?></div></td>
           <td height="19" valign="top" class="Estilo71">&nbsp;</td>
           <td height="19" align="center" valign="top" class="Estilo71"><div align="center"></div></td>
-            <td height="19" align="center" valign="top" class="Estilo71"><div align="center"></div></td>
+          <td height="19" align="center" valign="top" class="Estilo71"><div align="center"></div></td>
         </tr>
         <tr>
           <td height="19" valign="top" class="Estilo71"><div align="right">Sodio (Na)</div></td>
@@ -97,7 +188,7 @@ echo $consulta20;
           <td colspan="3" valign="top" class="Estilo71"></td>
         </tr>
         <tr>
-          <td height="19" align="right" valign="top" class="Estilo71">Cloruros (Cl<sup>-</sup>)</td>
+          <td height="19" valign="top" class="Estilo71"><div align="right">Cloruros (Cl<sup>-</sup>)</div></td>
           <td height="19" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[22]; ?></div></td>
           <td height="19" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[36]; ?></div></td>
         </tr>
