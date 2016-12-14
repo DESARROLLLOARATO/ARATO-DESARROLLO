@@ -32,7 +32,7 @@ echo $consulta20;
           <td colspan="6" align="center"></td>
         </tr>
         <tr>
-          <td colspan="6" bgcolor="#7DCC68">&nbsp;</td>
+          <td colspan="6" style="background:#7DCC68">&nbsp;</td>
         </tr>
         <tr>
           <td width="124">&nbsp;</td>
