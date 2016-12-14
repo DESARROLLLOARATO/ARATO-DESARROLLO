@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="../../js/anychart.min.js"></script>
+        <script src="../../js/anychart-ui.min.js"></script>
+        
+        
+        
+        <title>Magic Quadrant Gartner</title>
+        <style>
+         html, body, #container {
+             width: 100%;
+             height: 100%;
+             margin: 0;
+             padding: 0;
+         }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script type="text/javascript">
+         anychart.onDocumentReady(function() {
+var data = anychart.data.set([
+    {x: 65, y: 60, name: 'Tableau'},
+    {x: 68, y: 57, name: 'Qlik'},
+    {x: 78, y: 55, name: 'Microsoft'},
+    {x: 65.5, y: 48, name: 'Alteryx'},
+    {x: 63, y: 47, name: 'SAS', label: {anchor: 'right'}},
+    {x: 64, y: 43, name: 'SAP'},
+    {x: 58, y: 38, name: 'MicroStrategy'},
+    {x: 68, y: 28, name: 'IBM'},
+    {x: 61, y: 25, name: 'ClearStory Data'},
+    {x: 51, y: 21, name: 'TIBCO Software'},
+    {x: 62, y: 15, name: 'BeyondCore'},
+    {x: 53, y: 27.3, name: 'Logi Analytics', label: {anchor: 'leftBottom', offsetY:5, offsetX: -20}},
+    {x: 53.2, y: 25.8, name: 'Pentaho', label: {anchor: 'right'}},
+    {x: 47, y: 48, name: 'Birst', label: {anchor: 'right'}},
+    {x: 37, y: 43, name: 'Domo', label: {anchor: 'right'}},
+    {x: 36.6, y: 41, name: 'GoodData', label: {anchor: 'right'}},
+    {x: 25, y: 33, name: 'SalesForce', label: {anchor: 'right'}},
+    {x: 36.7, y: 27.5, name: 'Board International', label: {anchor: 'rightBottom', offsetX: 0}},
+    {x: 35, y: 26.5, name: 'Sisense', label: {anchor: 'right'}},
+    {x: 35.8, y: 26, name: 'Information Builders', label: {anchor: 'top', offsetY:0, offsetX: 0}},
+    {x: 20, y: 23, name: 'Pyramid Analytics', label: {anchor: 'right'}},
+    {x: 30, y: 16, name: 'Yellowfin', label: {anchor: 'right'}},
+    {x: 45, y: 11, name: 'Platfora', label: {anchor: 'right'}},
+    {x: 42, y: 5, name: 'Datawatch', label: {anchor: 'right'}}
+]);
+
+// create scatter chart
+chart = anychart.scatter();
+
+chart.credits(true);
+chart.credits().url('//www.gartner.com/doc/reprints?id=1-2XXET8P&ct=160204&st=sb');
+chart.credits().text('Source: Gartner (February 2016)');
+
+// set container id for the chart
+chart.container('container');
+chart.padding(10);
+chart.margin(0);
+
+// set scales settings
+chart.yScale().minimum(0).maximum(100);
+chart.xScale().minimum(0).maximum(100);
+chart.xAxis().ticks(false).labels(false).stroke('5 #CECECE').title().enabled(true).text('COMPLETENESS OF VISION').align('left');
+chart.xAxis(1).ticks(false).labels(false).orientation('top').stroke('5 #CECECE').title().enabled(true).text('COMPLETENESS OF VISION').align('right');
+chart.yAxis().ticks(false).labels(false).stroke('5 #CECECE').title().enabled(true).text('ABILITY TO EXECUTE').align('left');
+chart.yAxis(1).ticks(false).labels(false).orientation('right').stroke('5 #CECECE').title().enabled(true).text('ABILITY TO EXECUTE').align('left');
+
+// create  series with data
+var series = chart.marker(data).stroke('2px #1976d2');
+series.labels()
+        .fontFamily('Arial')
+        .fontColor('#1976d2')
+        .enabled(true)
+        .position('right')
+        .anchor('centerLeft')
+        .offsetX(5)
+        .offsetY(0)
+        .zIndex(100)
+        .textFormatter(function () {
+            return this.getDataValue('name')});
+series.tooltip().titleFormatter(function () {
+    return this.getDataValue('name')});
+series.tooltip().useHtml(true).textFormatter(function () {
+    return '<span style="color: #cecece; font-size: 11px">Completeness of vision: </span>' + this.getDataValue('x') +
+            '<br/><span style="color: #cecece; font-size: 11px">Ability of execute: </span>' + this.getDataValue('y')});
+
+var rangeMarker1 = chart.rangeMarker(0);
+rangeMarker1.scale(chart.xScale());
+rangeMarker1.fill(["0 #F7F7F7","0.5 #F7F7F7","0.5 #F7F7F7 0","1 #F7F7F7 0"],90);
+rangeMarker1.from(0);
+rangeMarker1.to(50);
+rangeMarker1.layout("vertical");
+
+var rangeMarker2 = chart.rangeMarker(1);
+rangeMarker2.scale(chart.xScale());
+rangeMarker2.from(50);
+rangeMarker2.to(100);
+rangeMarker2.fill(["0 #FF3300 0","0.5 #FF3300 0","0.5 #F7F7F7","1 #F7F7F7"],90);
+rangeMarker2.layout("vertical");
+
+var lineMarker1 = chart.lineMarker(0);
+lineMarker1.scale(chart.xScale()).stroke('2 #EAEAEA');
+lineMarker1.value(50);
+lineMarker1.layout("vertical");
+
+var lineMarker2 = chart.lineMarker(1);
+lineMarker2.scale(chart.yScale()).stroke('2 #EAEAEA');
+lineMarker2.value(50);
+lineMarker2.layout("horizontal");
+
+var label1 = chart.label(0);
+label1.enabled(false);
+label1.position('leftTop');
+label1.anchor('centerTop');
+label1.background().enabled(true).stroke('2 #EAEAEA').fill('#FBFBFB');
+label1.text('NICHE PLAYERS').fontColor('#cecece').padding([5, 10, 5, 10]);
+
+var label2 = chart.label(1);
+label2.enabled(false);
+label2.position('rightTop');
+label2.anchor('centerTop');
+label2.background().enabled(true).stroke('2 #EAEAEA').fill('#FBFBFB');
+label2.text('LEADERS').fontColor('#cecece').padding([5, 10, 5, 10]);
+
+var label3 = chart.label(2);
+label3.enabled(false);
+label3.position('leftBottom');
+label3.anchor('centerBottom');
+label3.background().enabled(true).stroke('2 #EAEAEA').fill('#FBFBFB');
+label3.text('CHALLENGERS').fontColor('#cecece').padding([5, 10, 5, 10]);
+
+var label4 = chart.label(3);
+label4.enabled(false);
+label4.position('rightBottom');
+label4.anchor('centerBottom');
+label4.background().enabled(true).stroke('2 #EAEAEA').fill('#FBFBFB');
+label4.text('VISIONARIES').fontColor('#cecece').padding([5, 10, 5, 10]);
+
+var lastWidth, lastHeight;
+chart.listen('chartDraw', function() {
+    var pxBounds = chart.getPixelBounds();
+    if (pxBounds.width == lastWidth && pxBounds.height == lastHeight)
+        return;
+    lastWidth = pxBounds.width;
+    lastHeight = pxBounds.height;
+
+    chartPadding = chart.padding();
+    var xAxisPadding = chart.xAxis().padding();
+    var yAxisPadding = chart.yAxis().padding();
+    var plotLeft = chartPadding.left() + xAxisPadding.left();
+    var plotRight = chartPadding.right() + xAxisPadding.right();
+    var qWidth = (pxBounds.width - (plotLeft + plotRight)) / 4;
+    var leftPos = qWidth + plotLeft;
+    var rightPos = qWidth + plotRight;
+    var topPos = chartPadding.top() + yAxisPadding.top() + 5;
+    var bottomPos = chartPadding.bottom() + yAxisPadding.bottom() + 4;
+
+    label1.offsetX(leftPos);
+    label1.offsetY(topPos);
+    label1.enabled(true);
+
+    label2.offsetX(-rightPos);
+    label2.offsetY(topPos);
+    label2.enabled(true);
+
+    label3.offsetX(leftPos);
+    label3.offsetY(bottomPos);
+    label3.enabled(true);
+
+    label4.offsetX(-rightPos);
+    label4.offsetY(bottomPos);
+    label4.enabled(true);
+});
+chart.draw();
+    });
+    
+        </script>
+    </body>
+</html>
