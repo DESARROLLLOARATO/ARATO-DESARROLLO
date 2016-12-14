@@ -27,7 +27,7 @@ echo $consulta20;
     <?php
     $Fila=mysqli_fetch_row($res20);
     ?>
-    <table style="margin: auto;">
+    <table class="tabla2" style="margin: auto;">
         <tr>
           <td colspan="6" align="center"></td>
         </tr>
@@ -36,11 +36,11 @@ echo $consulta20;
         </tr>
         <tr>
           <td width="124">&nbsp;</td>
-          <td width="120" class="Estilo71"><div align="center">% en la hoja</div></td>
-          <td width="147" class="Estilo71"><div align="center">&Iacute;ndice de Balance</div></td>
-          <td width="114" class="Estilo71"><div align="center"></div></td>
-          <td width="110" class="Estilo71"><div align="center">ppm en la hoja</div></td>
-          <td width="132" class="Estilo71"><div align="center">&Iacute;ndice de Balance</div></td>
+          <td width="120" class="Estilo71" style="color: #249f04;"><div align="center">% en la hoja</div></td>
+          <td width="147" class="Estilo71" style="color: #249f04;"><div align="center">&Iacute;ndice de Balance</div></td>
+          <td width="114" class="Estilo71" style="color: #249f04;"><div align="center"></div></td>
+          <td width="110" class="Estilo71" style="color: #249f04;"><div align="center">ppm en la hoja</div></td>
+          <td width="132" class="Estilo71" style="color: #249f04;"><div align="center">&Iacute;ndice de Balance</div></td>
         </tr>
         <tr>
           <td height="15" valign="top" class="Estilo71"><div align="right">Nitr&oacute;geno (N)</div></td>
@@ -94,8 +94,8 @@ echo $consulta20;
           <td height="19" valign="top" class="Estilo71"><div align="right">Sodio (Na)</div></td>
           <td height="19" align="center" valign="top" class="Estilo71"><?php echo $Fila[21]; ?></td>
           <td height="19" align="center" valign="top" class="Estilo71"><?php echo $Fila[35]; ?></td>
-            <td colspan="3" rowspan="2" valign="top" class="Estilo71">Nota:  Es deseable que los Índices de Balance de Na y Cl se mantengan por debajo de  117.                <div align="center"></div></td>
-          </tr>
+          <td colspan="3" valign="top" class="Estilo71"></td>
+        </tr>
         <tr>
           <td height="19" align="right" valign="top" class="Estilo71">Cloruros (Cl<sup>-</sup>)</td>
           <td height="19" valign="top" class="Estilo71"><div align="center"><?php echo $Fila[22]; ?></div></td>
