@@ -432,6 +432,7 @@ $cantre = 10;
                                                 <div id="div_Pulpa" class="contenido">
                                                     <h4 class="wpcf7-mail-sent-ok"> Elija la etapa de la pulpa:</h4>
                                                     <p>
+                                                      <select name="aplicacion3" id="aplication3">
                                                     <option value="0" selected>Seleccione una opción</option>
                                                     <option value="Fruto tamaño aceituna">Fruto tamaño aceituna</option>
                                                     <option value="Fruto en Crec-1">Fruto en Crec-1</option>
