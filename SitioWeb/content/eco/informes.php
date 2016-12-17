@@ -1,7 +1,7 @@
 <?php
 
-$con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
-//$con = new mysqli('localhost', 'root', '', 'prueba');
+//$con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
+$con = new mysqli('localhost', 'root', '', 'prueba');
         
 $con->query("SET NAMES 'utf8'");
 
@@ -46,7 +46,7 @@ $und="Toneladas";
 $OK="Calcular";
 
 //DATOS TABLA   aratoZutanoHass
-if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) and $_GET["patron"] == "ZUTANO" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "HASS"){
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) and $_GET["patron"] == "Zutano" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
     $consulta6 = "SELECT * FROM aratoZutanoHass";
     $res6 = mysqli_query($con,$consulta6);
     
@@ -69,7 +69,7 @@ if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) 
 }
 
 //DATOS TABLA   aratoLulaHass
-if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) and $_GET["patron"] == "LULA" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "HASS"){
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) and $_GET["patron"] == "Lula" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
     $consulta7 = "SELECT * FROM aratoLulaHass";
     $res7 = mysqli_query($con,$consulta7);
     
@@ -92,7 +92,7 @@ if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) 
 }
 
 //DATOS TABLA   beggieLulaHass
-if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) and $_GET["patron"] == "LULA" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "HASS"){
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) and $_GET["patron"] == "Lula" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
     $consulta8 = "SELECT * FROM beggieLulaHass";
     $res8 = mysqli_query($con,$consulta8);
     
@@ -115,7 +115,7 @@ if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) 
 }
 
 //DATOS TABLA   beggieZutanoHass
-if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) and $_GET["patron"] == "ZUTANO" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "HASS"){
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) and $_GET["patron"] == "Zutano" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
     $consulta9 = "SELECT * FROM beggieZutanoHass";
     $res9 = mysqli_query($con,$consulta9);
     
@@ -316,7 +316,7 @@ $cantre = 10;
             <div class="content_wrapper clearfix">
                 <div class="sections_group">
                   <div class="entry-content" itemprop="mainContentOfPage">                       
-                        <div id="informe" class="section mcb-section" style="padding-top:30px; padding-bottom:0px; background-color:#EFFBF5">
+                        <div class="section mcb-section" style="padding-top:30px; padding-bottom:0px; background-color:#EFFBF5">
                             <div class="section_wrapper mcb-section-inner">
                                 <div class="wrap mcb-wrap one  column-margin-30px valign-top clearfix">
                                     <div class="mcb-wrap-inner">
@@ -333,7 +333,7 @@ $cantre = 10;
                           <div class="section_wrapper mcb-section-inner">
                             <div class="wpcf7-captchar">
                               <div class="column_attr">
-                                <form action="" method="get">
+                                <form  id="informe" action="" method="get">
                                     <table width="100%" border="0" align="center"  background="">
                                       <tbody>
                                             <tr>
@@ -351,7 +351,7 @@ $cantre = 10;
                                                   <select name="patron" id="select_patron">
                                                     <option selected value="0">Seleccione un patrón</option>
                                                     <?php while($datos2 = mysqli_fetch_row($res2)) { ?>
-                                                    <option value="<?php echo $datos2[0] ?>"><?php echo $datos2[0] ?></option>
+                                                    <option <?php if(isset($_GET["patron"]) and $_GET["patron"] == $datos2[0]){ echo "selected"; } ?> value="<?php echo $datos2[0] ?>"><?php echo $datos2[0] ?></option>
                                                     <?php } ?>
                                                   </select>
                                                 </p>
@@ -360,7 +360,7 @@ $cantre = 10;
                                                   <select name="cultivar" id="select_cultivar">
                                                     <option value="0" selected>Seleccione un cultivar</option>
                                                     <?php while($datos5 = mysqli_fetch_row($res5)) { ?>
-                                                    <option value="<?php echo $datos5[0] ?>"><?php echo $datos5[0] ?></option>
+                                                    <option <?php if(isset($_GET["cultivar"]) and $_GET["cultivar"] == $datos5[0]){ echo "selected"; } ?> value="<?php echo $datos5[0] ?>"><?php echo $datos5[0] ?></option>
                                                     <?php } ?>
                                                   </select>
                                                 </p></td>
@@ -369,7 +369,7 @@ $cantre = 10;
                                                   <select name="modulo" id="select_modulo">
                                                     <option value="0">Seleccione un módulo</option>
                                                     <?php while($datos = mysqli_fetch_row($res)) { ?>
-                                                    <option value="<?php echo $datos[0] ?>"><?php echo $datos[0] ?></option>
+                                                    <option <?php if(isset($_GET["modulo"]) and $_GET["modulo"] == $datos[0]){ echo "selected"; } ?> value="<?php echo $datos[0] ?>"><?php echo $datos[0] ?></option>
                                                     <?php } ?>
                                                   </select>
                                                 </p>
@@ -379,7 +379,7 @@ $cantre = 10;
                                                   <select name="turno" id="select_turno">
                                                     <option value="0">Seleccione un turno</option>
                                                     <?php while($datos3 = mysqli_fetch_row($res3)) { ?>
-                                                    <option value="<?php echo $datos3[0] ?>"><?php echo $datos3[0] ?></option>
+                                                    <option <?php if(isset($_GET["turno"]) and $_GET["turno"] == $datos3[0]){ echo "selected"; } ?> value="<?php echo $datos3[0] ?>"><?php echo $datos3[0] ?></option>
                                                     <?php } ?>
                                                   </select>
                                                 </p>
@@ -389,7 +389,7 @@ $cantre = 10;
                                                   <select name="lote" id="select_lote">
                                                     <option value="0">Seleccione un lote</option>
                                                     <?php while($datos4 = mysqli_fetch_row($res4)) { ?>
-                                                    <option value="<?php echo $datos4[0] ?>"><?php echo $datos4[0] ?></option>
+                                                    <option <?php if(isset($_GET["lote"]) and $_GET["lote"] == $datos4[0]){ echo "selected"; } ?> value="<?php echo $datos4[0] ?>"><?php echo $datos4[0] ?></option>
                                                     <?php } ?>
                                                   </select>
                                               </p></td>
@@ -398,7 +398,7 @@ $cantre = 10;
                                                   <select name="campana" id="select_campana">
                                                       <option value="0">Seleccione la campaña</option>
                                                     <?php while($datos6 = mysqli_fetch_row($res10)) { ?>
-                                                    <option value="<?php echo $datos6[0] ?>"><?php echo $datos6[0] ?></option>
+                                                    <option <?php if(isset($_GET["campana"]) and $_GET["campana"] == $datos6[0]){ echo "selected"; } ?> value="<?php echo $datos6[0] ?>"><?php echo $datos6[0] ?></option>
                                                     <?php } ?>
                                                   </select>
                                                 </p>
@@ -415,7 +415,7 @@ $cantre = 10;
                                                 <div id="div_Foliar" class="contenido">
                                                     <h4 class="wpcf7-mail-sent-ok"> Elija la etapa Foliar:</h4>
                                                     <p>
-                                                      <select name="aplicacion2" id="aplication">
+                                                      <select name="aplicacion2" id="aplication2">
                                                     <option value="0" selected>Seleccione una opción</option>
                                                     <option value="Hojas de 5 cm">Hojas de 5 cm</option>
                                                     <option value="Antesis">Antesis</option>
@@ -432,7 +432,6 @@ $cantre = 10;
                                                 <div id="div_Pulpa" class="contenido">
                                                     <h4 class="wpcf7-mail-sent-ok"> Elija la etapa de la pulpa:</h4>
                                                     <p>
-                                                      <select name="aplicacion3" id="aplication">
                                                     <option value="0" selected>Seleccione una opción</option>
                                                     <option value="Fruto tamaño aceituna">Fruto tamaño aceituna</option>
                                                     <option value="Fruto en Crec-1">Fruto en Crec-1</option>
@@ -449,7 +448,7 @@ $cantre = 10;
                                         </tbody>
                                   </table>
                                     <p>
-                                      <input   align="center" type="submit" value="Graficar">
+                                      <input   align="center" type="submit" id="graficar" value="Graficar">
                                     </p>
                                 </form>
                                     
