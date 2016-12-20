@@ -63,7 +63,7 @@
                                                 <a href="informes.php"><span>Informes</span></a>
                                             </li>
                                             <li id="menu-item-2300" class="menu-item menu-item-type-post_type menu-item-object-page">
-                                                <a href="analisis.php"><span>Análisis</span></a>
+                                                <a href="analisis.html"><span>Análisis</span></a>
                                             </li>
                                             <li id="menu-item-2299" class="menu-item menu-item-type-post_type menu-item-object-page">
                                                 <a href="contactanos.html"><span>Contactanos</span></a>

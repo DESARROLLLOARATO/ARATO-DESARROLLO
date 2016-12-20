@@ -1,7 +1,7 @@
 <?php
 
-$con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
-//$con = new mysqli('localhost', 'root', '', 'prueba');
+//$con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
+$con = new mysqli('localhost', 'root', '', 'prueba');
         
 $con->query("SET NAMES 'utf8'");
 
