@@ -1,6 +1,6 @@
 
 <?php
-$hostname = "localhost"; //en mi caso es localhost
-$user = "pruebaar"; //en mi caso root
+$hostname = "localhost";
+$user = "pruebaar"; 
 $pass = "de55(;(TnNgf";
 ?>
