@@ -1,7 +1,7 @@
 <?php
 
-$con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
-//$con = new mysqli('localhost', 'root', '', 'prueba');
+//$con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
+$con = new mysqli('localhost', 'root', '', 'prueba');
         
 $con->query("SET NAMES 'utf8'");
 
@@ -22,31 +22,54 @@ if(isset($_GET["empresa"]) and $_GET["empresa"]==3){
     $empresa = "INAGRO";
 }
 
-$consulta = "SELECT DISTINCT Modulo FROM datos_arato1 WHERE Empresa = '$empresa'";
-$res = mysqli_query($con,$consulta);
+if(isset($_GET["aplicacion"]) and $_GET["aplicacion"] == 1){
+    $consulta = "SELECT DISTINCT Modulo FROM datos_arato_remocion WHERE Empresa = '$empresa'";
+    $res = mysqli_query($con,$consulta);
+    
+    $consulta2 = "SELECT DISTINCT Patron FROM datos_arato_remocion WHERE Empresa = '$empresa'";
+    $res2 = mysqli_query($con,$consulta2);
+    
+    $consulta3 = "SELECT DISTINCT Turno FROM datos_arato_remocion WHERE Empresa = '$empresa'";
+    $res3 = mysqli_query($con,$consulta3);  
 
-$consulta2 = "SELECT DISTINCT Patron FROM datos_arato1 WHERE Empresa = '$empresa'";
-$res2 = mysqli_query($con,$consulta2);
+    $consulta4 = "SELECT DISTINCT Lote FROM datos_arato_remocion WHERE Empresa = '$empresa'";
+    $res4 = mysqli_query($con,$consulta4);
 
-$consulta3 = "SELECT DISTINCT Turno FROM datos_arato1 WHERE Empresa = '$empresa'";
-$res3 = mysqli_query($con,$consulta3);  
+    $consulta5 = "SELECT DISTINCT Cultivar FROM datos_arato_remocion WHERE Empresa = '$empresa'";
+    $res5 = mysqli_query($con,$consulta5);
 
-$consulta4 = "SELECT DISTINCT Lote FROM datos_arato1 WHERE Empresa = '$empresa'";
-$res4 = mysqli_query($con,$consulta4);
+    $consulta10 = "SELECT DISTINCT Campana FROM datos_arato_remocion WHERE Empresa = '$empresa'";
+    $res10 = mysqli_query($con,$consulta10);
+}else{
+    $consulta = "SELECT DISTINCT Modulo FROM datos_arato_remocion WHERE Empresa = '$empresa'";
+    $res = mysqli_query($con,$consulta);
+    
+    $consulta2 = "SELECT DISTINCT Patron FROM datos_arato1 WHERE Empresa = '$empresa'";
+    $res2 = mysqli_query($con,$consulta2);
 
-$consulta5 = "SELECT DISTINCT Cultivar FROM datos_arato1 WHERE Empresa = '$empresa'";
-$res5 = mysqli_query($con,$consulta5);
+    $consulta3 = "SELECT DISTINCT Turno FROM datos_arato1 WHERE Empresa = '$empresa'";
+    $res3 = mysqli_query($con,$consulta3);  
 
-$consulta10 = "SELECT DISTINCT Campana FROM datos_arato1 WHERE Empresa = '$empresa'";
-$res10 = mysqli_query($con,$consulta10);
+    $consulta4 = "SELECT DISTINCT Lote FROM datos_arato1 WHERE Empresa = '$empresa'";
+    $res4 = mysqli_query($con,$consulta4);
+
+    $consulta5 = "SELECT DISTINCT Cultivar FROM datos_arato1 WHERE Empresa = '$empresa'";
+    $res5 = mysqli_query($con,$consulta5);
+
+    $consulta10 = "SELECT DISTINCT Campana FROM datos_arato1 WHERE Empresa = '$empresa'";
+    $res10 = mysqli_query($con,$consulta10);
+}
+
+
+
 //FIN LLENAR SELECTS
 
 $und="Toneladas";
 //$und="Kilogramos";
 $OK="Calcular";
-
+//$cantre = 10;
 //DATOS TABLA   aratoZutanoHass
-if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) and $_GET["patron"] == "Zutano" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) and $_GET["patron"] == "ZUTANO" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
     $consulta6 = "SELECT * FROM aratoZutanoHass";
     $res6 = mysqli_query($con,$consulta6);
     
@@ -69,7 +92,7 @@ if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) 
 }
 
 //DATOS TABLA   aratoLulaHass
-if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) and $_GET["patron"] == "Lula" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) and $_GET["patron"] == "LULA" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
     $consulta7 = "SELECT * FROM aratoLulaHass";
     $res7 = mysqli_query($con,$consulta7);
     
@@ -92,7 +115,7 @@ if(isset($_GET["empresa"]) and $_GET["empresa"] == 2 and isset($_GET["patron"]) 
 }
 
 //DATOS TABLA   beggieLulaHass
-if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) and $_GET["patron"] == "Lula" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) and $_GET["patron"] == "LULA" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
     $consulta8 = "SELECT * FROM beggieLulaHass";
     $res8 = mysqli_query($con,$consulta8);
     
@@ -115,7 +138,7 @@ if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) 
 }
 
 //DATOS TABLA   beggieZutanoHass
-if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) and $_GET["patron"] == "Zutano" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
+if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) and $_GET["patron"] == "ZUTANO" and isset($_GET["cultivar"]) and $_GET["cultivar"] == "Hass"){
     $consulta9 = "SELECT * FROM beggieZutanoHass";
     $res9 = mysqli_query($con,$consulta9);
     
@@ -137,8 +160,16 @@ if(isset($_GET["empresa"]) and $_GET["empresa"] == 1 and isset($_GET["patron"]) 
     }
 }
 
+//DATOS sacar Toneladas
+if(isset($_GET["aplicacion"]) and $_GET["aplicacion"] == 1 and isset($_GET["empresa"]) and $_GET["empresa"] == !null and isset($_GET["patron"]) and $_GET["patron"] == !null and isset($_GET["cultivar"]) and $_GET["cultivar"] == !null and isset($_GET["campana"]) and $_GET["campana"] == !null and isset($_GET["lote"]) and $_GET["lote"] == !null and isset($_GET["turno"]) and $_GET["turno"] == !null and isset($_GET["modulo"]) and $_GET["modulo"] == !null){
+    $consulta11 = "SELECT Cantidad FROM datos_arato_remocion WHERE Empresa='$empresa' AND Cultivar='".$_GET['cultivar']."' AND Patron='".$_GET['patron']."' AND Campana='".$_GET['campana']."' AND Lote='".$_GET['lote']."' AND Turno='".$_GET['turno']."' AND Modulo='".$_GET['modulo']."'";
+    $res11 = mysqli_query($con,$consulta11);
 
-$cantre = 10;
+    while($tabla5 = mysqli_fetch_row($res11)) {
+        $cantre = $tabla5[0];
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -178,15 +209,7 @@ $cantre = 10;
     
     <!-- JQUERY -->
     <script language="javascript" type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script language="javascript" type="text/javascript">
-        $(document).ready(function(){
-            $(".contenido").fadeOut("normal");
-            $("#aplication").change(function(){
-            $(".contenido").hide();
-                $("#div_" + $(this).val()).fadeIn("normal");
-            });
-        });
-    </script>
+   
     
     <!-- CSS -->
     <style type="text/css">
@@ -331,9 +354,19 @@ $cantre = 10;
                                     <table width="100%" border="0" align="center"  background="">
                                       <tbody>
                                             <tr>
-                                              <td  width="10" align="center"><h4 class="wpcf7-mail-sent-ok">Empresa:</h4>
+                                              <td  width="10" align="center">
+                                                <h4 class="wpcf7-mail-sent-ok"> Aplicación:</h4>
                                                 <p>
-                                                  <select onchange="location.href='informes.php?empresa='+this.value+'#informe'" name="empresa" id="select_empresa" >
+                                                  <select onchange="location.href='informes.php?aplicacion='+this.value+'#informe'" name="aplicacion" id="aplication">
+                                                      <option value="0" selected>Seleccione la aplicación</option>
+                                                      <option <?php if(isset($_GET["aplicacion"]) and $_GET["aplicacion"] == "1"){ echo "selected"; } ?> value="1">Remoción Nutrimental</option>
+                                                      <option <?php if(isset($_GET["aplicacion"]) and $_GET["aplicacion"] == "Foliar"){ echo "selected"; } ?> value="Foliar">Diagnóstico Nutrimental Foliar</option>
+                                                      <option <?php if(isset($_GET["aplicacion"]) and $_GET["aplicacion"] == "Pulpa"){ echo "selected"; } ?> value="Pulpa">Diagnóstico Nutrimental Pulpa</option>
+                                                  </select>
+                                                </p>                                                
+                                                <h4 class="wpcf7-mail-sent-ok">Empresa:</h4>
+                                                <p>
+                                                  <select onchange="location.href='informes.php?aplicacion='+getElementById('aplication').value+'&empresa='+this.value+'#informe'" name="empresa" id="select_empresa" >
                                                     <option value="0">Seleccione la empresa</option>
                                                     <option <?php if(isset($_GET["empresa"]) and $_GET["empresa"] == 1){ echo "selected"; } ?> value="1">BEGGIE PERÚ</option>
                                                     <option <?php if(isset($_GET["empresa"]) and $_GET["empresa"] == 2){ echo "selected"; } ?> value="2">ARATO PERÚ</option>
@@ -386,7 +419,8 @@ $cantre = 10;
                                                     <option <?php if(isset($_GET["lote"]) and $_GET["lote"] == $datos4[0]){ echo "selected"; } ?> value="<?php echo $datos4[0] ?>"><?php echo $datos4[0] ?></option>
                                                     <?php } ?>
                                                   </select>
-                                              </p></td>
+                                                </p>
+                                              </td>
                                               <td width="100" align="left"><h4 class="wpcf7-mail-sent-ok">Campaña:</h4>
                                                 <p>
                                                   <select name="campana" id="select_campana">
@@ -396,17 +430,10 @@ $cantre = 10;
                                                     <?php } ?>
                                                   </select>
                                                 </p>
-                                                <h4 class="wpcf7-mail-sent-ok"> Aplicación:</h4>
-                                                <p>
-                                                  <select name="aplicacion" id="aplication">
-                                                      <option value="0" selected>Seleccione la aplicación</option>
-                                                      <option value="1">Remoción Nutrimental</option>
-                                                      <option value="Foliar">Diagnóstico Nutrimental Foliar</option>
-                                                      <option value="Pulpa">Diagnóstico Nutrimental Pulpa</option>
-                                                  </select>
-                                                </p>
+                                                
                                                 <!--  SELECT OPCIONALES   -->
-                                                <div id="div_Foliar" class="contenido">
+                                                <?php if(isset($_GET["aplicacion"]) and $_GET["aplicacion"] == "Foliar"){ ?>
+                                                  <div id="div_Foliar" class="contenido">
                                                     <h4 class="wpcf7-mail-sent-ok"> Elija la etapa Foliar:</h4>
                                                     <p>
                                                       <select name="aplicacion2" id="aplication2">
@@ -422,21 +449,25 @@ $cantre = 10;
                                                     <option value="Fruto en media cosecha (≥ 24% MS)">Fruto en media cosecha (≥ 24% MS)</option>
                                                       </select>
                                                     </p>
-                                                </div>
-                                                <div id="div_Pulpa" class="contenido">
-                                                    <h4 class="wpcf7-mail-sent-ok"> Elija la etapa de la pulpa:</h4>
-                                                    <p>
-                                                      <select name="aplicacion3" id="aplication3">
-                                                    <option value="0" selected>Seleccione una opción</option>
-                                                    <option value="Fruto tamaño aceituna">Fruto tamaño aceituna</option>
-                                                    <option value="Fruto en Crec-1">Fruto en Crec-1</option>
-                                                    <option value="Fruto en Crec-2">Fruto en Crec-2</option>
-                                                    <option value="Fruto en Crec-3">Fruto en Crec-3</option>
-                                                    <option value="Fruto en cosecha (≥ 21.5% MS)">Fruto en cosecha (≥ 21.5% MS)</option>
-                                                    <option value="Fruto en media cosecha (≥ 24% MS)">Fruto en media cosecha (≥ 24% MS)</option>
-                                                      </select>
-                                                    </p>
-                                                </div>
+                                                    </div>
+                                                <?php } 
+                                                  
+                                                if(isset($_GET["aplicacion"]) and $_GET["aplicacion"] == "Pulpa"){ ?>                                                
+                                                    <div id="div_Pulpa" class="contenido">
+                                                        <h4 class="wpcf7-mail-sent-ok"> Elija la etapa de la pulpa:</h4>
+                                                        <p>
+                                                          <select name="aplicacion3" id="aplication3">
+                                                        <option value="0" selected>Seleccione una opción</option>
+                                                        <option value="Fruto tamaño aceituna">Fruto tamaño aceituna</option>
+                                                        <option value="Fruto en Crec-1">Fruto en Crec-1</option>
+                                                        <option value="Fruto en Crec-2">Fruto en Crec-2</option>
+                                                        <option value="Fruto en Crec-3">Fruto en Crec-3</option>
+                                                        <option value="Fruto en cosecha (≥ 21.5% MS)">Fruto en cosecha (≥ 21.5% MS)</option>
+                                                        <option value="Fruto en media cosecha (≥ 24% MS)">Fruto en media cosecha (≥ 24% MS)</option>
+                                                          </select>
+                                                        </p>
+                                                    </div>
+                                                <?php } ?>
                                                 <!-- FIN SELECT OPCIONALES   -->
                                               </td>
                                             </tr>
@@ -455,7 +486,15 @@ $cantre = 10;
                                     
                                     
                                     <!--     GENERAR TABLA DE REMOCION    -->
-                                    <?php if (isset($_GET["aplicacion"]) and $_GET["aplicacion"] ==1 ){  ?>
+                                    <?php if (isset($_GET["aplicacion"]) and $_GET["aplicacion"] == 1 and
+                                             isset($_GET["empresa"]) and $_GET["empresa"] == !null and 
+                                            isset($_GET["patron"]) and $_GET["patron"] == !null and 
+                                            isset($_GET["cultivar"]) and $_GET["cultivar"] == !null  and 
+                                            isset($_GET["modulo"]) and $_GET["modulo"] == !null and
+                                            isset($_GET["turno"]) and $_GET["turno"] == !null and 
+                                            isset($_GET["lote"]) and $_GET["lote"] == !null and 
+                                            isset($_GET["campana"]) and $_GET["campana"] == !null)
+                                        {  ?>
                                       <table class="tabla">
                                         <tr>
                                             <th colspan="2" style="text-align: center; font-weight: bold;">Nutrimentos removidos (kg):</th>
@@ -732,7 +771,14 @@ $cantre = 10;
                                     <!--     GENERAR GRAFICA FOLIAR    -->
                                     
                                     <?php 
-                                    if (isset($_GET["aplicacion"]) and $_GET["aplicacion"] == "Pulpa" || $_GET["aplicacion"] == "Foliar")
+                                    if (isset($_GET["aplicacion"]) and $_GET["aplicacion"] == "Pulpa" || $_GET["aplicacion"] == "Foliar" and
+                                        isset($_GET["empresa"]) and $_GET["empresa"] == !null and 
+                                        isset($_GET["patron"]) and $_GET["patron"] == !null and 
+                                        isset($_GET["cultivar"]) and $_GET["cultivar"] == !null  and 
+                                        isset($_GET["modulo"]) and $_GET["modulo"] == !null and
+                                        isset($_GET["turno"]) and $_GET["turno"] == !null and 
+                                        isset($_GET["lote"]) and $_GET["lote"] == !null and 
+                                        isset($_GET["campana"]) and $_GET["campana"] == !null)
                                     {
                                         include ("graficar_fruta.php");
                                     }  
