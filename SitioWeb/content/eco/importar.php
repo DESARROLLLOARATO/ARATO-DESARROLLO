@@ -88,7 +88,7 @@
             <div id="Subheader" style="padding:210px 0 120px;">
                 <div class="container">
                     <div class="column one">
-                        <h1 class="title">Datos para Diagnóstico</h1>
+                        <h1 class="title">Importación de bases de datos</h1>
                     </div>
                 </div>
             </div>
@@ -114,15 +114,14 @@
                             <div class="section_wrapper mcb-section-inner">                            
                              <table width="200" border="0">
                                <tbody>
-                               <form action="upload1.php" method="post" enctype="multipart/form-data">
+                               <form>
                                  <tr>
                                    <td>&nbsp;</td>
-                                   <td>Subir datos:
-                                   <input type="file" name="archivo" id="archivo">
-                                   <span >
-                                   <input name="enviar" type="submit" value="Subir datos" />
+                                   <td><span >
+                                   <input name="remocion" onClick="window.location.href='importar_remocion.php'" type="button" value="Importar datos para Remoción" />
+                                   <input name="diagnostico" onClick="window.location.href='upload.php'" type="button" value="Importar datos para Diagnóstico" />
                                    </span></td>
-                                   <td><input name="action" type="hidden" value="upload" /></td>
+                                   <td>&nbsp;</td>
                                  </tr>
                                  </form>
                                </tbody>

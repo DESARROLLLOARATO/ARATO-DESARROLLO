@@ -1,5 +1,15 @@
 <?php
 $con = new mysqli('localhost', 'pruebaar', 'de55(;(TnNgf', 'pruebaar_arato');
+
+$ddf = $_GET["aplicacion2"];
+$cma = $_GET["campana"];
+$patron=$_GET["patron"];
+$modulo=$_GET["modulo"];
+$turno=$_GET["turno"];
+$lote=$_GET["lote"];
+$tejido=$_GET["aplicacion"];
+
+echo $cma."   ".$patron;
 ?>
 
 		<meta charset="UTF-8">
